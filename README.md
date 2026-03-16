@@ -4,88 +4,74 @@ Plataforma de búsqueda de acuerdos y temas del Colegio del Personal Académico 
 
 ## Cómo funciona
 
-**Para los miembros del CPA:** Entran al sitio web y buscan por palabras clave (nombres, temas, áreas, votaciones). Pueden filtrar por tipo y rango de fechas.
+**Para los miembros del CPA:** Entran al sitio web y buscan por palabras clave. Pueden filtrar por tipo y rango de fechas, y descargar las actas originales.
 
-**Para el administrador:** Después de cada sesión, usa cualquier IA para convertir el acta (PDF o Word) a JSON y lo sube desde el panel admin.
+**Para el administrador:** Sube el PDF/Word del acta → la IA extrae los datos automáticamente → revisa → confirma. Todo queda visible para todos.
 
 ---
 
-## Despliegue paso a paso
+## Despliegue
 
 ### 1. Subir a GitHub
+Crea un repo (ej: `cpa-buscador-inaoe`) y sube todos los archivos.
 
-1. Crea un repositorio en [github.com](https://github.com) (ej: `cpa-buscador-inaoe`)
-2. Sube todos los archivos de este proyecto
+### 2. Token de GitHub
+En [github.com/settings/tokens](https://github.com/settings/tokens?type=beta) → Fine-grained token → permisos Contents: Read and write → solo el repo del buscador.
 
-### 2. Crear un token de GitHub
+### 3. Netlify
+[netlify.com](https://netlify.com) → Import from GitHub → Publish: `public`, Functions: `netlify/functions`.
 
-1. Ve a [github.com/settings/tokens](https://github.com/settings/tokens?type=beta)
-2. **Generate new token** (Fine-grained)
-3. Configura:
-   - **Token name:** `CPA Buscador`
-   - **Expiration:** 1 año
-   - **Repository access:** Solo el repo `cpa-buscador-inaoe`
-   - **Permissions → Contents:** `Read and write`
-4. Copia el token (`github_pat_...`)
+### 4. API key de Gemini
+En [aistudio.google.com/apikey](https://aistudio.google.com/apikey) → Create API key. Gratis, sin tarjeta de crédito.
 
-### 3. Desplegar en Netlify
-
-1. [netlify.com](https://netlify.com) → **Add new site** → **Import from GitHub**
-2. Selecciona el repositorio
-3. Publish directory: `public`, Functions directory: `netlify/functions`
-4. **Deploy**
-
-### 4. Variables de entorno en Netlify
-
-En **Site configuration → Environment variables**, agrega:
+### 5. Variables de entorno en Netlify
 
 | Variable | Valor |
 |----------|-------|
-| `GITHUB_TOKEN` | El token del paso 2 |
+| `GITHUB_TOKEN` | Token de GitHub |
 | `GITHUB_REPO` | `tu-usuario/cpa-buscador-inaoe` |
-| `ADMIN_PASSWORD` | `CPA2026!` (o la que prefieras) |
+| `ADMIN_PASSWORD` | `CPA2026!` |
+| `GEMINI_API_KEY` | Key de Google AI Studio |
 
-Haz un redeploy después de agregarlas.
+Redeploy después de agregarlas.
 
 ---
 
 ## Flujo del administrador
 
-1. Abrir cualquier IA (ChatGPT, Gemini, Claude, Grok)
-2. Copiar el prompt del panel admin (botón "Copiar prompt")
-3. Pegar el prompt + texto del acta
-4. Copiar el JSON generado
-5. Panel admin → Pegar → Validar → Confirmar
-6. El sitio se actualiza para todos en ~1 minuto
+### Automático (recomendado)
+1. Panel admin → **Subir acta** → seleccionar PDF/Word
+2. Clic en **Procesar con IA** (~10-15 seg)
+3. Revisar previsualización → **Confirmar**
+4. El archivo se renombra automáticamente (ej: `CPA-2025-08-28.pdf`)
 
-### Nota sobre PDFs escaneados
-
-Si el PDF es una imagen escaneada (no tiene texto seleccionable), hay dos opciones:
-- Usar el archivo Word (.docx) si está disponible
-- Subir el PDF directamente a Claude o ChatGPT, que pueden leer imágenes con OCR
+### Manual (respaldo)
+1. Panel admin → **Agregar manualmente** → adjuntar archivo
+2. Generar JSON con cualquier IA (ChatGPT, Gemini, Claude, Grok)
+3. Pegar JSON → Validar → Confirmar
 
 ---
 
 ## Estructura
-
 ```
 cpa-buscador/
 ├── public/
 │   ├── index.html
 │   ├── logo_CPA.jpg
 │   └── data/
-│       └── actas.json
+│       ├── actas.json
+│       └── archivos/          ← PDFs/Words originales
 ├── netlify/
 │   └── functions/
-│       └── save-actas.js
+│       ├── process-acta.js    ← Procesamiento con Gemini
+│       └── save-actas.js      ← Guardado en GitHub
+├── package.json
 ├── netlify.toml
 └── README.md
 ```
 
-## Contraseña admin por defecto
-
-`CPA2026!` — Cambiar en la variable de entorno `ADMIN_PASSWORD` de Netlify y en `index.html`.
-
 ## Costos
+Todo gratuito: Netlify, GitHub, Gemini API (free tier: 1,000 req/día, solo usas ~1/mes).
 
-Todo gratuito: Netlify (free tier), GitHub (free), IA (uso manual).
+## Contraseña admin
+`CPA2026!` — cambiar en variable de entorno `ADMIN_PASSWORD`.

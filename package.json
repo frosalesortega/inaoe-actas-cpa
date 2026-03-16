@@ -1,0 +1,7 @@
+{
+  "name": "cpa-buscador-inaoe",
+  "private": true,
+  "dependencies": {
+    "mammoth": "^1.8.0"
+  }
+}

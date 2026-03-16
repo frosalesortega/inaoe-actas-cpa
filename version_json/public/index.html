@@ -171,12 +171,6 @@
     .step { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 13px; color: var(--text-2); line-height: 1.5; }
     .step-n { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; min-width: 24px; border-radius: 50%; background: var(--accent-bg); color: var(--accent-t); font-size: 12px; font-weight: 600; }
     .divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
-    .upload-zone { border: 2px dashed var(--border); border-radius: var(--radius-lg); padding: 2rem; text-align: center; cursor: pointer; transition: all .2s; background: var(--bg-surface); }
-    .upload-zone:hover, .upload-zone.dragover { border-color: var(--accent); background: var(--accent-bg); }
-    .upload-zone.has-file { border-style: solid; border-color: var(--accent); }
-    .upload-file-name { font-size: 14px; font-weight: 500; color: var(--text-1); margin-top: 8px; }
-    .upload-file-size { font-size: 12px; color: var(--text-3); }
-    .upload-icon { width: 40px; height: 40px; margin: 0 auto 8px; color: var(--text-3); }
     .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid #fff4; border-top-color: #fff; border-radius: 50%; animation: spin .6s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
     .footer { text-align: center; padding: 2rem 0; font-size: 12px; color: var(--text-3); border-top: 1px solid var(--border); }
@@ -279,11 +273,8 @@ let adminMsg = null;
 let previewData = null;
 let saving = false;
 let hasSearched = false;
-let adminTab = 'upload';
+let adminTab = 'add';
 let overwriteMode = false;
-let processing = false;
-let uploadedFileData = null;
-let uploadedFileName = null;
 
 // ═══════════════════════════════════════════
 //  DATA — loads from static file (source of truth)
@@ -390,7 +381,7 @@ function renderWelcome() {
   for (const a of [...db].sort((x,y)=>y.fecha.localeCompare(x.fecha))) {
     for (const item of a.items) {
       if (item.tipo==='acuerdo') {
-        recentAcuerdos.push({...item, fechaLabel:a.fechaLabel, acta:a.acta, archivo:a.archivo||''});
+        recentAcuerdos.push({...item, fechaLabel:a.fechaLabel, acta:a.acta});
         if (recentAcuerdos.length>=5) break;
       }
     }
@@ -444,7 +435,7 @@ function doSearch() {
     for (const item of acta.items) {
       if (activeType!=='all' && item.tipo!==activeType) continue;
       const s = score(item, tokens);
-      if (s > 0) results.push({...item, acta:acta.acta, fecha:acta.fecha, fechaLabel:acta.fechaLabel, archivo:acta.archivo||'', score:s});
+      if (s > 0) results.push({...item, acta:acta.acta, fecha:acta.fecha, fechaLabel:acta.fechaLabel, score:s});
     }
   }
   results.sort((a,b) => b.score-a.score || b.fecha.localeCompare(a.fecha));
@@ -477,7 +468,7 @@ function doSearch() {
       <div class="rc-title">${hl(r.titulo,tokens)}</div>
       <div class="rc-body">${hl(r.texto,tokens)}</div>
       <div class="rc-tags">${r.tags.map(t=>`<span class="rc-tag">${esc(t)}</span>`).join('')}</div>
-      <div class="rc-acta">Acta: ${esc(r.acta)}${r.archivo?` · <a href="./data/archivos/${esc(r.archivo)}" target="_blank" style="font-size:11px;">Ver acta original ↗</a>`:''}</div>
+      <div class="rc-acta">Acta: ${esc(r.acta)}</div>
     </div>`).join('');
 
   // Pagination
@@ -527,44 +518,12 @@ function renderAdmin() {
     ${adminMsg ? `<div class="msg ${adminMsg.c}">${adminMsg.t}</div>` : ''}
 
     <div class="admin-tabs">
-      <button class="admin-tab ${adminTab==='upload'?'active':''}" onclick="adminTab='upload';renderAdmin();">Subir acta</button>
-      <button class="admin-tab ${adminTab==='add'?'active':''}" onclick="adminTab='add';renderAdmin();">Agregar manualmente</button>
+      <button class="admin-tab ${adminTab==='add'?'active':''}" onclick="adminTab='add';renderAdmin();">Agregar acta</button>
       <button class="admin-tab ${adminTab==='list'?'active':''}" onclick="adminTab='list';renderAdmin();">Actas cargadas<span class="admin-tab-badge">${db.length}</span></button>
       <button class="admin-tab ${adminTab==='tools'?'active':''}" onclick="adminTab='tools';renderAdmin();">Herramientas</button>
     </div>
 
-    <!-- ── TAB: Subir acta (automático con IA) ── -->
-    <div class="admin-pane ${adminTab==='upload'?'active':''}">
-      <div class="admin-section">
-        <div class="admin-label">Subir acta (procesamiento automático)</div>
-        <div class="admin-sublabel">Sube el archivo PDF o Word del acta. La IA extraerá los acuerdos, temas y puntos automáticamente.</div>
-
-        <div class="upload-zone ${uploadedFileName?'has-file':''}" id="uploadZone" onclick="document.getElementById('fileInput').click();">
-          ${uploadedFileName ? `
-            <div class="upload-file-name">${esc(uploadedFileName)}</div>
-            <div class="upload-file-size">Archivo listo. Haz clic en "Procesar con IA" para continuar.</div>
-            <div style="margin-top:8px;font-size:12px;color:var(--accent);cursor:pointer;" onclick="event.stopPropagation();clearUpload();">Cambiar archivo</div>
-          ` : `
-            <div class="upload-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg></div>
-            <div style="font-size:14px;color:var(--text-2);">Haz clic para seleccionar o arrastra el archivo aquí</div>
-            <div style="font-size:12px;color:var(--text-3);margin-top:4px;">PDF (recomendado) o Word (.docx)</div>
-          `}
-        </div>
-        <input type="file" id="fileInput" accept=".pdf,.docx,.doc" style="display:none" onchange="handleFileSelect(event)">
-
-        <div style="margin-top:10px;padding:10px 14px;background:var(--bg-surface);border-radius:var(--radius);font-size:12px;color:var(--text-3);line-height:1.6;">
-          <strong style="color:var(--text-2);">Nota:</strong> Tamaño máximo recomendado: <strong style="color:var(--text-2);">4 MB</strong>. Si el archivo es mayor, se sugiere comprimirlo antes con <a href="https://www.ilovepdf.com/compress_pdf" target="_blank">iLovePDF</a> u otra herramienta similar. Los archivos Word se guardarán tal cual; se recomienda subir PDFs cuando sea posible.
-        </div>
-
-        <div style="margin-top:12px;">
-          <button class="btn btn-primary" onclick="processWithAI()" ${!uploadedFileName||processing?'disabled':''}>${processing?'<span class="spinner"></span> Procesando con IA...':'Procesar con IA'}</button>
-        </div>
-      </div>
-
-      ${previewData && adminTab==='upload' ? renderPreview() : ''}
-    </div>
-
-    <!-- ── TAB: Agregar manualmente ── -->
+    <!-- ── TAB: Agregar acta ── -->
     <div class="admin-pane ${adminTab==='add'?'active':''}">
       <div class="admin-section">
         <div class="admin-label">Agregar nueva acta</div>
@@ -572,19 +531,6 @@ function renderAdmin() {
 
         <div class="step">
           <span class="step-n">1</span>
-          <span>Adjunta el archivo original del acta (PDF o Word). Es obligatorio para que los miembros puedan consultarlo:</span>
-        </div>
-        <div style="margin-left:34px;margin-bottom:16px;">
-          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-            <button class="btn btn-outline" style="font-size:13px;" onclick="document.getElementById('manualFileInput').click();">${uploadedFileName ? esc(uploadedFileName) : 'Seleccionar archivo'}</button>
-            ${uploadedFileName ? '<span style="font-size:12px;color:var(--ok-t);">Archivo adjunto</span>' : '<span style="font-size:12px;color:var(--text-3);">PDF o Word (.docx)</span>'}
-            ${uploadedFileName ? `<span style="font-size:12px;color:var(--accent);cursor:pointer;" onclick="clearUpload()">Cambiar</span>` : ''}
-          </div>
-          <input type="file" id="manualFileInput" accept=".pdf,.docx,.doc" style="display:none" onchange="handleFileSelect(event)">
-        </div>
-
-        <div class="step">
-          <span class="step-n">2</span>
           <span>Abre cualquier plataforma de IA (<a href="https://chatgpt.com/" target="_blank">ChatGPT</a>, <a href="https://gemini.google.com/?hl=es" target="_blank">Gemini</a>, <a href="https://claude.ai" target="_blank">Claude</a>, <a href="https://grok.com/" target="_blank">Grok</a>) y pega el prompt de abajo junto con el texto completo del acta (copia/pega del PDF):</span>
         </div>
         <div style="position:relative;margin-left:34px;margin-bottom:16px;">
@@ -593,11 +539,11 @@ function renderAdmin() {
         </div>
 
         <div class="step">
-          <span class="step-n">3</span>
+          <span class="step-n">2</span>
           <span>La IA te devolverá un JSON estructurado. Cópialo completo.</span>
         </div>
         <div class="step">
-          <span class="step-n">4</span>
+          <span class="step-n">3</span>
           <span>Pégalo aquí y haz clic en <strong>Validar y previsualizar</strong>:</span>
         </div>
 
@@ -607,7 +553,7 @@ function renderAdmin() {
         </div>
       </div>
 
-      ${previewData && adminTab==='add' ? renderPreview() : ''}
+      ${previewData ? renderPreview() : ''}
     </div>
 
     <!-- ── TAB: Actas cargadas ── -->
@@ -619,10 +565,7 @@ function renderAdmin() {
           ${sorted.map(a => {
             const na = a.items.filter(i=>i.tipo==='acuerdo').length;
             return `<div class="acta-row">
-              <div>
-                <span class="acta-row-info">${esc(a.fechaLabel)}</span>
-                ${a.archivo?`<a href="./data/archivos/${esc(a.archivo)}" target="_blank" style="font-size:11px;margin-left:8px;">Ver PDF ↗</a>`:''}
-              </div>
+              <span class="acta-row-info">${esc(a.fechaLabel)}</span>
               <div style="display:flex;align-items:center;gap:8px;">
                 <span class="acta-row-count">${a.items.length} puntos · ${na} acuerdo${na!==1?'s':''}</span>
                 <button class="btn btn-danger btn-sm" onclick="deleteActa('${esc(a.acta).replace(/'/g,"\\'")}')">Eliminar</button>
@@ -653,7 +596,6 @@ function renderAdmin() {
       </div>
     </div>`;
   adminMsg = null;
-  setTimeout(initUploadZone, 50);
 }
 
 function renderPreview() {
@@ -663,7 +605,7 @@ function renderPreview() {
     <div class="admin-section" style="margin-top:1.5rem;">
       <div class="preview-card">
         <div class="preview-title">Previsualización: ${esc(p.fechaLabel)}</div>
-        <div class="preview-item" style="margin-bottom:10px;">Acta: ${esc(p.acta)} — ${p.items.length} puntos, ${na} acuerdo${na!==1?'s':''}${uploadedFileName ? ` · Archivo: <strong>CPA-${esc(p.fecha)}.${uploadedFileName.split('.').pop().toLowerCase()}</strong>` : ''}</div>
+        <div class="preview-item" style="margin-bottom:10px;">Acta: ${esc(p.acta)} — ${p.items.length} puntos, ${na} acuerdo${na!==1?'s':''}</div>
         ${p.items.map(i=>`<div class="preview-item">
           <span class="badge-type ${TC[i.tipo]}" style="font-size:10px;vertical-align:middle;margin-right:4px;">${TL[i.tipo]}</span>
           ${esc(i.titulo)}
@@ -697,7 +639,6 @@ function copyPrompt() {
 function validateJSON() {
   let raw = document.getElementById('jsonInput').value.trim();
   if (!raw) { adminMsg={c:'msg-err',t:'Pega el JSON antes de validar.'}; previewData=null; renderAdmin(); return; }
-  if (!uploadedFileName) { adminMsg={c:'msg-err',t:'Debes adjuntar el archivo original del acta (paso 1) antes de validar.'}; previewData=null; renderAdmin(); return; }
 
   let parsed;
   try {
@@ -744,50 +685,38 @@ async function confirmSave() {
   saving = true;
   renderAdmin();
 
-  // Standardize file name: CPA-YYYY-MM-DD.ext
-  let standardFileName = null;
-  if (uploadedFileName && previewData.fecha) {
-    const ext = uploadedFileName.split('.').pop().toLowerCase();
-    standardFileName = `CPA-${previewData.fecha}.${ext}`;
-    previewData.archivo = standardFileName;
-  }
-
   // If overwriting, remove the old acta first
   const baseDb = overwriteMode ? db.filter(a=>a.acta!==previewData.acta) : db;
   const newDb = [...baseDb, previewData];
   const action = overwriteMode ? 'sobrescrita' : 'guardada';
 
-  // Build save payload including file if available
-  const savePayload = { password: ADMIN_PASSWORD, actas: newDb };
-  if (uploadedFileData && standardFileName) {
-    savePayload.fileData = uploadedFileData;
-    savePayload.fileName = standardFileName;
-  }
-
   try {
+    // Try saving via serverless function (GitHub)
     const resp = await fetch('/.netlify/functions/save-actas', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
-      body: JSON.stringify(savePayload)
+      body: JSON.stringify({ password: ADMIN_PASSWORD, actas: newDb })
     });
     const result = await resp.json();
 
     if (resp.ok && result.success) {
       db = newDb;
       adminMsg = {c:'msg-ok', t:`¡Acta "${previewData.acta}" ${action}! ${result.message}`};
-      previewData = null; overwriteMode = false; uploadedFileData = null; uploadedFileName = null;
+      previewData = null; overwriteMode = false;
     } else {
+      // If function fails (not configured), fall back to localStorage
       console.warn('GitHub save failed, using localStorage fallback:', result.error);
       db = newDb;
       localStorage.setItem('cpa_actas_local', JSON.stringify(db));
-      adminMsg = {c:'msg-warn', t:`Acta ${action} localmente (solo en este navegador). Error: ${result.error}`};
+      adminMsg = {c:'msg-warn', t:`Acta ${action} localmente (solo visible en este navegador). Para que sea visible para todos, configura la conexión con GitHub. Error: ${result.error}`};
       previewData = null; overwriteMode = false;
     }
   } catch(e) {
+    // Network error or function not available — localStorage fallback
     console.warn('Save function unavailable, using localStorage:', e);
     db = newDb;
     localStorage.setItem('cpa_actas_local', JSON.stringify(db));
-    adminMsg = {c:'msg-warn', t:`Acta ${action} localmente (solo en este navegador). Configura GitHub para que todos la vean.`};
+    adminMsg = {c:'msg-warn', t:`Acta ${action} localmente (solo visible en este navegador). Para que todos la vean, configura la conexión con GitHub. Ver instrucciones en README.`};
     previewData = null; overwriteMode = false;
   }
 
@@ -821,102 +750,7 @@ async function deleteActa(actaId) {
   renderAdmin();
 }
 
-function cancelPreview() { previewData=null; adminMsg=null; overwriteMode=false; uploadedFileData=null; uploadedFileName=null; renderAdmin(); }
-
-// ── File upload & AI processing ──
-function handleFileSelect(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-  const ext = file.name.split('.').pop().toLowerCase();
-  if (!['pdf','docx','doc'].includes(ext)) {
-    adminMsg = {c:'msg-err', t:'Formato no soportado. Usa PDF o Word (.docx).'}; renderAdmin(); return;
-  }
-  if (file.size > 10 * 1024 * 1024) {
-    adminMsg = {c:'msg-err', t:'El archivo es muy grande (máx. 10 MB).'}; renderAdmin(); return;
-  }
-  const reader = new FileReader();
-  reader.onload = (e) => {
-    uploadedFileData = e.target.result.split(',')[1]; // base64 without prefix
-    uploadedFileName = file.name;
-    previewData = null; adminMsg = null;
-    renderAdmin();
-  };
-  reader.readAsDataURL(file);
-  event.target.value = '';
-}
-
-function clearUpload() {
-  uploadedFileData = null; uploadedFileName = null;
-  previewData = null; adminMsg = null;
-  renderAdmin();
-}
-
-async function processWithAI() {
-  if (!uploadedFileData || !uploadedFileName || processing) return;
-  processing = true;
-  adminMsg = {c:'msg-info', t:'Enviando archivo a la IA para procesamiento... esto puede tomar 15-30 segundos.'};
-  renderAdmin();
-
-  try {
-    const resp = await fetch('/.netlify/functions/process-acta', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ password: ADMIN_PASSWORD, fileData: uploadedFileData, fileName: uploadedFileName })
-    });
-
-    // Netlify returns HTML on timeout — detect that
-    const contentType = resp.headers.get('content-type') || '';
-    if (!contentType.includes('application/json')) {
-      adminMsg = {c:'msg-err', t:'La función tardó demasiado y fue interrumpida por el servidor. Intenta de nuevo — el segundo intento suele ser más rápido. Si persiste, usa la pestaña "Agregar manualmente".'};
-      previewData = null;
-      processing = false;
-      renderAdmin();
-      return;
-    }
-
-    const result = await resp.json();
-
-    if (resp.ok && result.success && result.acta) {
-      previewData = result.acta;
-      // Check for duplicate
-      if (db.some(a => a.acta === previewData.acta)) {
-        overwriteMode = true;
-        const existing = db.find(a => a.acta === previewData.acta);
-        adminMsg = {c:'msg-warn', t:`Ya existe el acta "${previewData.acta}" (${existing.fechaLabel}). Si confirmas, se sobrescribirá.`};
-      } else {
-        overwriteMode = false;
-        adminMsg = {c:'msg-ok', t:`Procesado correctamente — ${previewData.items.length} puntos detectados. Revisa y confirma.`};
-      }
-    } else {
-      adminMsg = {c:'msg-err', t: result.error || 'Error al procesar el archivo.'};
-      if (result.rawResponse) {
-        adminMsg.t += ' Puedes intentar de nuevo o usar la pestaña "Agregar manualmente".';
-      }
-      previewData = null;
-    }
-  } catch(e) {
-    adminMsg = {c:'msg-err', t:`Error de conexión: ${e.message}. Verifica que GEMINI_API_KEY esté configurada en Netlify.`};
-    previewData = null;
-  }
-
-  processing = false;
-  renderAdmin();
-}
-
-// Setup drag and drop
-function initUploadZone() {
-  const zone = document.getElementById('uploadZone');
-  if (!zone) return;
-  zone.ondragover = (e) => { e.preventDefault(); zone.classList.add('dragover'); };
-  zone.ondragleave = () => zone.classList.remove('dragover');
-  zone.ondrop = (e) => {
-    e.preventDefault(); zone.classList.remove('dragover');
-    if (e.dataTransfer.files.length) {
-      document.getElementById('fileInput').files = e.dataTransfer.files;
-      handleFileSelect({target: document.getElementById('fileInput')});
-    }
-  };
-}
+function cancelPreview() { previewData=null; adminMsg=null; overwriteMode=false; renderAdmin(); }
 
 function exportDB() {
   const blob = new Blob([JSON.stringify(db,null,2)],{type:'application/json'});

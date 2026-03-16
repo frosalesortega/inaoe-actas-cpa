@@ -4,107 +4,22 @@
     "fecha": "2025-08-28",
     "fechaLabel": "28 de agosto de 2025",
     "items": [
-      {
-        "tipo": "seguimiento",
-        "titulo": "Seguimiento de acuerdos",
-        "texto": "El secretario del CPA dio seguimiento a los acuerdos previos.",
-        "tags": ["seguimiento", "acuerdos"]
-      },
-      {
-        "tipo": "tema",
-        "titulo": "Ratificación de representante suplente de Astrofísica",
-        "texto": "Se votó electrónicamente la ratificación del Dr. Alfredo Montaña Barbano como representante suplente de la Coordinación de Astrofísica. Resultado: 25 a favor, 0 en contra, 1 abstención. Queda ratificado.",
-        "tags": ["Alfredo Montaña", "Astrofísica", "representante suplente", "ratificación", "votación"],
-        "area": "Coordinación de Astrofísica"
-      },
-      {
-        "tipo": "tema",
-        "titulo": "Ratificación de representante titular de Óptica — Héctor Moya Cessa",
-        "texto": "Votación electrónica para el Dr. Héctor M. Moya Cessa como representante titular de Óptica. Resultado: 22 a favor, 5 en contra, 4 abstenciones. El Dr. Moya Cessa presentó su renuncia el 18 de agosto de 2025.",
-        "tags": ["Héctor Moya Cessa", "Óptica", "representante titular", "ratificación", "renuncia"],
-        "area": "Coordinación de Óptica"
-      },
-      {
-        "tipo": "tema",
-        "titulo": "No ratificación de Dr. Irán Ramos Prieto como representante titular de Óptica",
-        "texto": "Votación electrónica: 10 a favor, 33 en contra, 3 abstenciones. No procede la ratificación. La Coordinación de Óptica deberá proponer otro investigador o decidir si el Dr. Bartolomé Reyes asume como titular.",
-        "tags": ["Irán Ramos Prieto", "Bartolomé Reyes", "Óptica", "representante titular", "no ratificación", "votación"],
-        "area": "Coordinación de Óptica"
-      },
-      {
-        "tipo": "tema",
-        "titulo": "Mejoras para el funcionamiento del CPA — Participación en Junta de Gobierno",
-        "texto": "Se propone emitir una opinión colegiada del CPA sobre la vida académica y administrativa del Instituto para su presentación en cada sesión de Junta de Gobierno. También se propone un ejercicio de evaluación institucional complementario incluyendo tecnólogos, estudiantes y personal administrativo.",
-        "tags": ["Junta de Gobierno", "opinión colegiada", "evaluación institucional", "mejoras", "funcionamiento CPA"]
-      },
-      {
-        "tipo": "tema",
-        "titulo": "Recomendaciones de la Comisión de Modificación de Tabla de EDAs",
-        "texto": "En julio se propuso un formato web para la tabla de EDAs. La DIDT sugiere aplicar la nueva tabla en la evaluación 2025 con cambios mínimos. Acuerdo previo 2025/03/07-02: puntaje Q1 y Q2 = 55 puntos, Q3 = 40, Q4 = 25. Se dan 5 puntos extra si el primer autor pertenece al INAOE.",
-        "tags": ["EDAs", "tabla de EDAs", "evaluación", "puntaje", "publicaciones", "DIDT", "comisión"],
-        "area": "Comisión de Modificación de Tabla de EDAs"
-      },
-      {
-        "tipo": "tema",
-        "titulo": "Mecanismo para opinión del CPA ante la Junta de Gobierno",
-        "texto": "El CPA puede elaborar pronunciamientos formales (acuerdos, resoluciones, minutas) dirigidos a la Junta de Gobierno por conducto del Director General o el Secretario del CPA. Deben fundamentarse en el Estatuto Orgánico. La Junta está obligada a considerar la opinión del personal académico (Art. 14, Fracción XXII). Se requiere oficio con 10 días hábiles de anticipación.",
-        "tags": ["Junta de Gobierno", "pronunciamiento", "Estatuto Orgánico", "Director General", "opinión", "mecanismo"]
-      },
-      {
-        "tipo": "tema",
-        "titulo": "Puntos propuestos por H. Moya — GTC, cartas grupales, violencia de género",
-        "texto": "Se sometió a votación la propuesta de eliminar este punto de la agenda. Resultado: 46 a favor de eliminar, 7 en contra. Se acordó eliminar el punto.",
-        "tags": ["Héctor Moya", "GTC", "cartas grupales", "violencia de género", "agenda", "eliminación punto"],
-        "area": "Coordinación de Óptica"
-      },
-      {
-        "tipo": "tema",
-        "titulo": "Pregunta sobre ratificación del representante ante el CPA — Bartolomé Reyes",
-        "texto": "El Dr. Bartolomé Reyes planteó interrogantes sobre si la no ratificación en Óptica queda sujeta al criterio de otras coordinaciones, si el representante será elegido por otras coordinaciones, y sobre el nivel jerárquico respecto al secretario del CPA. Se dio lectura al Artículo 3, Fracción IV del Estatuto.",
-        "tags": ["Bartolomé Reyes", "ratificación", "Estatuto", "representante", "Óptica", "coordinaciones"]
-      },
-      {
-        "tipo": "general",
-        "titulo": "Propuesta de seminarios institucionales por el CPA",
-        "texto": "Se planteó que el CPA proponga los seminarios institucionales.",
-        "tags": ["seminarios", "institucional", "propuesta"]
-      },
-      {
-        "tipo": "general",
-        "titulo": "Reconocimientos o menciones honoríficas a estudiantes de doctorado",
-        "texto": "Se planteó la posibilidad de otorgar reconocimientos a tesis de doctorado. Se concluyó que corresponde a la DFA. El tema será incluido en la consulta abierta al CPA.",
-        "tags": ["reconocimientos", "menciones honoríficas", "tesis", "doctorado", "DFA", "estudiantes"]
-      },
-      {
-        "tipo": "general",
-        "titulo": "Status de postdocs del INAOE",
-        "texto": "Se habló sobre los postdocs que carecen de derechos básicos como personal de investigación. El tema puede ser incluido en la opinión del CPA ante la Junta de Gobierno.",
-        "tags": ["postdocs", "derechos", "personal de investigación", "Junta de Gobierno"]
-      },
-      {
-        "tipo": "acuerdo",
-        "titulo": "ACUERDO 1 CPAEX-28082025: Tabla de EDAs — solicitud a DIDT",
-        "texto": "Se solicitará a la DIDT una tabla donde de manera explícita se puedan entender los cambios a la tabla de EDAs, para ser presentada en la próxima reunión del CPA y, en su caso, votar su implementación para la evaluación 2025.",
-        "tags": ["EDAs", "DIDT", "tabla", "evaluación", "cambios"]
-      },
-      {
-        "tipo": "acuerdo",
-        "titulo": "ACUERDO 2 CPAEX-28082025: Consulta abierta al CPA",
-        "texto": "Los representantes titulares se comprometen a elaborar la consulta abierta al CPA sobre temas prioritarios, la dinámica y los objetivos del CPA.",
-        "tags": ["consulta abierta", "representantes titulares", "temas prioritarios", "objetivos"]
-      },
-      {
-        "tipo": "acuerdo",
-        "titulo": "ACUERDO 3 CPAEX-28082025: Borrador opinión sobre CEE",
-        "texto": "Los representantes titulares presentarán un borrador de opinión del CPA sobre la evaluación de la CEE, así como los principales problemas académicos y administrativos del Instituto, para su presentación en la próxima Junta de Gobierno.",
-        "tags": ["CEE", "evaluación", "Junta de Gobierno", "opinión", "problemas académicos"]
-      },
-      {
-        "tipo": "acuerdo",
-        "titulo": "ACUERDO 4 CPAEX-28082025: Seminarios institucionales",
-        "texto": "Se consultará sobre la posibilidad de que el CPA sugiera o participe en los seminarios institucionales.",
-        "tags": ["seminarios", "institucional", "participación CPA"]
-      }
+      { "tipo": "seguimiento", "titulo": "Seguimiento de acuerdos", "texto": "El secretario del CPA dio seguimiento a los acuerdos previos.", "tags": ["seguimiento", "acuerdos"] },
+      { "tipo": "tema", "titulo": "Ratificación de representante suplente de Astrofísica", "texto": "Se votó electrónicamente la ratificación del Dr. Alfredo Montaña Barbano como representante suplente de la Coordinación de Astrofísica. Resultado: 25 a favor, 0 en contra, 1 abstención. Queda ratificado.", "tags": ["Alfredo Montaña", "Astrofísica", "representante suplente", "ratificación", "votación"], "area": "Coordinación de Astrofísica" },
+      { "tipo": "tema", "titulo": "Ratificación de representante titular de Óptica — Héctor Moya Cessa", "texto": "Votación electrónica para el Dr. Héctor M. Moya Cessa como representante titular de Óptica. Resultado: 22 a favor, 5 en contra, 4 abstenciones. El Dr. Moya Cessa presentó su renuncia el 18 de agosto de 2025.", "tags": ["Héctor Moya Cessa", "Óptica", "representante titular", "ratificación", "renuncia"], "area": "Coordinación de Óptica" },
+      { "tipo": "tema", "titulo": "No ratificación de Dr. Irán Ramos Prieto como representante titular de Óptica", "texto": "Votación electrónica: 10 a favor, 33 en contra, 3 abstenciones. No procede la ratificación. La Coordinación de Óptica deberá proponer otro investigador o decidir si el Dr. Bartolomé Reyes asume como titular.", "tags": ["Irán Ramos Prieto", "Bartolomé Reyes", "Óptica", "representante titular", "no ratificación", "votación"], "area": "Coordinación de Óptica" },
+      { "tipo": "tema", "titulo": "Mejoras para el funcionamiento del CPA — Participación en Junta de Gobierno", "texto": "Se propone emitir una opinión colegiada del CPA sobre la vida académica y administrativa del Instituto para su presentación en cada sesión de Junta de Gobierno. También se propone un ejercicio de evaluación institucional complementario.", "tags": ["Junta de Gobierno", "opinión colegiada", "evaluación institucional", "mejoras", "funcionamiento CPA"] },
+      { "tipo": "tema", "titulo": "Recomendaciones de la Comisión de Modificación de Tabla de EDAs", "texto": "En julio se propuso un formato web para la tabla de EDAs. La DIDT sugiere aplicar la nueva tabla en la evaluación 2025 con cambios mínimos. Acuerdo previo: puntaje Q1 y Q2 = 55 puntos, Q3 = 40, Q4 = 25. Se dan 5 puntos extra si el primer autor pertenece al INAOE.", "tags": ["EDAs", "tabla de EDAs", "evaluación", "puntaje", "publicaciones", "DIDT", "comisión"], "area": "Comisión de Modificación de Tabla de EDAs" },
+      { "tipo": "tema", "titulo": "Mecanismo para opinión del CPA ante la Junta de Gobierno", "texto": "El CPA puede elaborar pronunciamientos formales dirigidos a la Junta de Gobierno por conducto del Director General. Deben fundamentarse en el Estatuto Orgánico. La Junta está obligada a considerar la opinión del personal académico (Art. 14, Fracción XXII). Se requiere oficio con 10 días hábiles de anticipación.", "tags": ["Junta de Gobierno", "pronunciamiento", "Estatuto Orgánico", "Director General", "opinión", "mecanismo"] },
+      { "tipo": "tema", "titulo": "Puntos propuestos por H. Moya — GTC, cartas grupales, violencia de género", "texto": "Se sometió a votación la propuesta de eliminar este punto de la agenda. Resultado: 46 a favor de eliminar, 7 en contra. Se acordó eliminar el punto.", "tags": ["Héctor Moya", "GTC", "cartas grupales", "violencia de género", "agenda"], "area": "Coordinación de Óptica" },
+      { "tipo": "tema", "titulo": "Pregunta sobre ratificación del representante — Bartolomé Reyes", "texto": "El Dr. Bartolomé Reyes planteó interrogantes sobre si la no ratificación en Óptica queda sujeta al criterio de otras coordinaciones. Se dio lectura al Artículo 3, Fracción IV del Estatuto.", "tags": ["Bartolomé Reyes", "ratificación", "Estatuto", "representante", "Óptica"] },
+      { "tipo": "general", "titulo": "Propuesta de seminarios institucionales por el CPA", "texto": "Se planteó que el CPA proponga los seminarios institucionales.", "tags": ["seminarios", "institucional", "propuesta"] },
+      { "tipo": "general", "titulo": "Reconocimientos a estudiantes de doctorado", "texto": "Se planteó otorgar reconocimientos a tesis de doctorado. Se concluyó que corresponde a la DFA. El tema será incluido en la consulta abierta al CPA.", "tags": ["reconocimientos", "tesis", "doctorado", "DFA", "estudiantes"] },
+      { "tipo": "general", "titulo": "Status de postdocs del INAOE", "texto": "Se habló sobre los postdocs que carecen de derechos básicos como personal de investigación. El tema puede ser incluido en la opinión del CPA ante la Junta de Gobierno.", "tags": ["postdocs", "derechos", "personal de investigación", "Junta de Gobierno"] },
+      { "tipo": "acuerdo", "titulo": "ACUERDO 1 CPAEX-28082025: Tabla de EDAs — solicitud a DIDT", "texto": "Se solicitará a la DIDT una tabla donde de manera explícita se puedan entender los cambios a la tabla de EDAs, para la próxima reunión del CPA y votar su implementación para la evaluación 2025.", "tags": ["EDAs", "DIDT", "tabla", "evaluación", "cambios"] },
+      { "tipo": "acuerdo", "titulo": "ACUERDO 2 CPAEX-28082025: Consulta abierta al CPA", "texto": "Los representantes titulares se comprometen a elaborar la consulta abierta al CPA sobre temas prioritarios, la dinámica y los objetivos del CPA.", "tags": ["consulta abierta", "representantes titulares", "temas prioritarios", "objetivos"] },
+      { "tipo": "acuerdo", "titulo": "ACUERDO 3 CPAEX-28082025: Borrador opinión sobre CEE", "texto": "Los representantes titulares presentarán un borrador de opinión del CPA sobre la evaluación de la CEE y los principales problemas del Instituto, para la próxima Junta de Gobierno.", "tags": ["CEE", "evaluación", "Junta de Gobierno", "opinión", "problemas académicos"] },
+      { "tipo": "acuerdo", "titulo": "ACUERDO 4 CPAEX-28082025: Seminarios institucionales", "texto": "Se consultará sobre la posibilidad de que el CPA sugiera o participe en los seminarios institucionales.", "tags": ["seminarios", "institucional", "participación CPA"] }
     ]
   },
   {
@@ -112,78 +27,18 @@
     "fecha": "2025-10-09",
     "fechaLabel": "09 de octubre de 2025",
     "items": [
-      {
-        "tipo": "tema",
-        "titulo": "Resultados de la Consulta Abierta al CPA — Temas prioritarios",
-        "texto": "Consulta realizada del 8 al 22 de septiembre de 2025, con 25 respuestas. Temas prioritarios: Condiciones laborales, recursos y presupuesto (38%); Administración y gestión institucional DAF (31%); Revisión y actualización de normatividad (28%); Representatividad y voz del CPA (19%).",
-        "tags": ["consulta abierta", "temas prioritarios", "condiciones laborales", "presupuesto", "DAF", "normatividad", "representatividad"]
-      },
-      {
-        "tipo": "tema",
-        "titulo": "Consulta Abierta — Función y objetivos del CPA",
-        "texto": "Resultados: Buscar condiciones para trabajo académico y de investigación (38%); Promover diálogo con DG, DAF, DIDT y DAF (22%); Defensa de autonomía científica y calidad (19%); Ser voz colectiva en Junta de Gobierno (16%); Exigir transparencia y rendición de cuentas (10%).",
-        "tags": ["consulta abierta", "objetivos CPA", "investigación", "autonomía", "transparencia", "Junta de Gobierno"]
-      },
-      {
-        "tipo": "tema",
-        "titulo": "Plan de acción del CPA aprobado",
-        "texto": "Se propuso un plan de acción: asuntos de competencia interna resueltos por DG/áreas administrativas; asuntos de competencia externa presentados como opiniones formales del CPA ante la Junta de Gobierno. Incluye mecanismo para involucrar a la comunidad. Aprobado con 24 votos a favor, 0 en contra y 1 abstención.",
-        "tags": ["plan de acción", "competencia interna", "competencia externa", "Junta de Gobierno", "opiniones formales", "votación"]
-      },
-      {
-        "tipo": "tema",
-        "titulo": "Consulta Abierta — Temas ante Junta de Gobierno",
-        "texto": "Propuestas concretas en: Recursos, presupuesto e infraestructura (34%); Gestión administrativa y normativa (28%). Los representantes trabajarán en un borrador para el pleno del CPA.",
-        "tags": ["Junta de Gobierno", "recursos", "presupuesto", "infraestructura", "gestión administrativa", "normativa", "borrador"]
-      },
-      {
-        "tipo": "tema",
-        "titulo": "Consulta Abierta — Reglamento del CPA",
-        "texto": "Respuestas incluyeron: Inclusión de tecnólogos, claridad en procesos internos, elección y ratificación de representantes, reducción de ambigüedades, actualizar estatutos, revisión cada 5 años, confirmar su papel como único órgano legítimo de representación ante SECIHTI. Propuesta de encuestas semestrales de desempeño.",
-        "tags": ["reglamento", "tecnólogos", "representantes", "estatutos", "SECIHTI", "encuestas", "desempeño"]
-      },
-      {
-        "tipo": "tema",
-        "titulo": "Consulta Abierta — Reconocimientos a estudiantes",
-        "texto": "Sobre si el INAOE debe otorgar reconocimientos o menciones honoríficas a tesis de doctorado: 44% a favor, 56% en contra. No será considerado por el CPA.",
-        "tags": ["reconocimientos", "menciones honoríficas", "tesis", "doctorado", "estudiantes", "votación"]
-      },
-      {
-        "tipo": "tema",
-        "titulo": "Comité de actualización del Reglamento del CPA",
-        "texto": "Surgieron voluntarios para conformar el comité: Roberto Murphy, Divakara Mayya, Ángel Sinue Cruz Felix, Wilfrido Calleja Arriaga, María del Pilar Gómez Gil, Carlos Gerardo Treviño Palacios, Saúl Pomares Hernández, José Ramón Valdés Parra. Además, los representantes titulares y suplentes iniciarán reuniones próximas con propuestas intermedias.",
-        "tags": ["reglamento", "comité", "Roberto Murphy", "Divakara Mayya", "Ángel Cruz", "Wilfrido Calleja", "Pilar Gómez Gil", "Treviño Palacios", "Saúl Pomares", "Valdés Parra", "actualización"]
-      },
-      {
-        "tipo": "general",
-        "titulo": "Actualización de Políticas y Reglamento de Bungalows",
-        "texto": "La DAF compartió con los representantes del CPA la actualización de las Políticas y del Reglamento de Bungalows. El Secretario del CPA distribuirá los documentos a la comunidad para revisión y comentarios.",
-        "tags": ["bungalows", "políticas", "reglamento", "DAF", "comunidad"]
-      },
-      {
-        "tipo": "general",
-        "titulo": "Falta de presupuesto para contratación de psicólogos y profesores de inglés",
-        "texto": "Se señaló la falta de presupuesto para la contratación de psicólogos y profesores de inglés.",
-        "tags": ["presupuesto", "psicólogos", "profesores de inglés", "contratación"]
-      },
-      {
-        "tipo": "general",
-        "titulo": "Posibilidad de separarse del CPA — Coordinación de Óptica",
-        "texto": "Algunos colegas de la Coordinación de Óptica han manifestado inquietud sobre si es posible separarse del CPA. Se aclaró que por su carácter de investigadores son miembros automáticos del comité, aunque su participación en las reuniones es opcional.",
-        "tags": ["Óptica", "separación", "membresía", "participación", "investigadores"]
-      },
-      {
-        "tipo": "acuerdo",
-        "titulo": "ACUERDO 1 CPAEX-09102025: Contacto con investigadores por temas prioritarios",
-        "texto": "Los representantes del CPA contactarán a 2 o más investigadores que hayan identificado problemas similares en la encuesta. Se les invitará a formular propuestas concretas para el pleno. Las propuestas serán discutidas y aprobadas en Asamblea. Los acuerdos aprobados se presentarán oficialmente en el CCA.",
-        "tags": ["representantes", "investigadores", "propuestas", "Asamblea", "CCA", "temas prioritarios"]
-      },
-      {
-        "tipo": "general",
-        "titulo": "Estado financiero cooperación café y galletas",
-        "texto": "Saldo anterior de -$68, cooperación recibida por $283, saldo actual de $215.",
-        "tags": ["cooperación", "café", "galletas", "finanzas", "saldo"]
-      }
+      { "tipo": "tema", "titulo": "Resultados Consulta Abierta — Temas prioritarios", "texto": "Consulta del 8 al 22 de septiembre de 2025, 25 respuestas. Temas: Condiciones laborales y presupuesto (38%); Administración y gestión DAF (31%); Normatividad (28%); Representatividad del CPA (19%).", "tags": ["consulta abierta", "temas prioritarios", "condiciones laborales", "presupuesto", "DAF", "normatividad"] },
+      { "tipo": "tema", "titulo": "Consulta Abierta — Función y objetivos del CPA", "texto": "Resultados: Buscar condiciones para investigación (38%); Promover diálogo con DG/DAF/DIDT (22%); Defensa de autonomía científica (19%); Voz colectiva en Junta de Gobierno (16%); Transparencia (10%).", "tags": ["consulta abierta", "objetivos CPA", "investigación", "autonomía", "transparencia", "Junta de Gobierno"] },
+      { "tipo": "tema", "titulo": "Plan de acción del CPA aprobado", "texto": "Asuntos internos resueltos por DG/áreas administrativas; asuntos externos como opiniones formales ante Junta de Gobierno. Incluye mecanismo para involucrar a la comunidad. Aprobado: 24 a favor, 0 en contra, 1 abstención.", "tags": ["plan de acción", "Junta de Gobierno", "opiniones formales", "votación"] },
+      { "tipo": "tema", "titulo": "Consulta Abierta — Temas ante Junta de Gobierno", "texto": "Propuestas en: Recursos, presupuesto e infraestructura (34%); Gestión administrativa y normativa (28%). Los representantes trabajarán en un borrador.", "tags": ["Junta de Gobierno", "recursos", "presupuesto", "infraestructura", "normativa", "borrador"] },
+      { "tipo": "tema", "titulo": "Consulta Abierta — Reglamento del CPA", "texto": "Inclusión de tecnólogos, claridad en procesos, elección de representantes, reducción de ambigüedades, revisión cada 5 años, confirmar papel como órgano legítimo ante SECIHTI. Propuesta de encuestas semestrales.", "tags": ["reglamento", "tecnólogos", "representantes", "estatutos", "SECIHTI", "encuestas"] },
+      { "tipo": "tema", "titulo": "Consulta Abierta — Reconocimientos a estudiantes", "texto": "Sobre reconocimientos a tesis de doctorado: 44% a favor, 56% en contra. No será considerado por el CPA.", "tags": ["reconocimientos", "tesis", "doctorado", "estudiantes", "votación"] },
+      { "tipo": "tema", "titulo": "Comité de actualización del Reglamento del CPA", "texto": "Voluntarios: Roberto Murphy, Divakara Mayya, Ángel Sinue Cruz Felix, Wilfrido Calleja Arriaga, María del Pilar Gómez Gil, Carlos Gerardo Treviño Palacios, Saúl Pomares Hernández, José Ramón Valdés Parra.", "tags": ["reglamento", "comité", "Roberto Murphy", "Divakara Mayya", "Ángel Cruz", "Wilfrido Calleja", "Pilar Gómez Gil", "Treviño Palacios", "Saúl Pomares", "Valdés Parra"] },
+      { "tipo": "general", "titulo": "Actualización de Políticas y Reglamento de Bungalows", "texto": "La DAF compartió la actualización de Políticas y Reglamento de Bungalows. El Secretario del CPA distribuirá los documentos a la comunidad.", "tags": ["bungalows", "políticas", "reglamento", "DAF"] },
+      { "tipo": "general", "titulo": "Falta de presupuesto para psicólogos y profesores de inglés", "texto": "Se señaló la falta de presupuesto para la contratación de psicólogos y profesores de inglés.", "tags": ["presupuesto", "psicólogos", "profesores de inglés", "contratación"] },
+      { "tipo": "general", "titulo": "Posibilidad de separarse del CPA — Coordinación de Óptica", "texto": "Algunos colegas de Óptica manifestaron inquietud sobre separarse del CPA. Se aclaró que por su carácter de investigadores son miembros automáticos, aunque la participación en reuniones es opcional.", "tags": ["Óptica", "separación", "membresía", "participación", "investigadores"] },
+      { "tipo": "acuerdo", "titulo": "ACUERDO 1 CPAEX-09102025: Contacto con investigadores por temas prioritarios", "texto": "Los representantes contactarán a 2 o más investigadores que identificaron problemas similares en la encuesta. Se formularán propuestas concretas para el pleno. Los acuerdos aprobados se presentarán oficialmente en el CCA.", "tags": ["representantes", "investigadores", "propuestas", "Asamblea", "CCA", "temas prioritarios"] },
+      { "tipo": "general", "titulo": "Estado financiero cooperación café y galletas", "texto": "Saldo anterior de -$68, cooperación recibida por $283, saldo actual de $215.", "tags": ["cooperación", "café", "galletas", "finanzas", "saldo"] }
     ]
   }
 ]
