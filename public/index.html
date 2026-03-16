@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador CPA — INAOE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-page: #f5f4f0;
+      --bg-card: #ffffff;
+      --bg-surface: #f7f6f3;
+      --bg-hover: #efede8;
+      --text-1: #1a1a1a;
+      --text-2: #5c5c5c;
+      --text-3: #8c8c8c;
+      --border: #e2e0db;
+      --border-h: #c8c6c0;
+      --accent: #1b3a8c;
+      --accent-bg: #e8edf7;
+      --accent-t: #142d6e;
+      --ok-bg: #e1f5ee; --ok-t: #085041;
+      --err-bg: #fcebeb; --err-t: #791f1f;
+      --warn-bg: #faeeda; --warn-t: #633806;
+      --t-acuerdo-bg: #e1f5ee; --t-acuerdo-t: #085041;
+      --t-tema-bg: #e6f1fb; --t-tema-t: #0c447c;
+      --t-seg-bg: #faeeda; --t-seg-t: #633806;
+      --t-gen-bg: #f1efe8; --t-gen-t: #444441;
+      --hl-bg: #faeeda; --hl-t: #633806;
+      --radius: 10px;
+      --radius-lg: 14px;
+      --font: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-page: #141414;
+        --bg-card: #1e1e1e;
+        --bg-surface: #252525;
+        --bg-hover: #303030;
+        --text-1: #e8e8e8;
+        --text-2: #a0a0a0;
+        --text-3: #666;
+        --border: #333;
+        --border-h: #444;
+        --accent: #6b8fd4;
+        --accent-bg: #1a2a4d;
+        --accent-t: #95b3e8;
+        --ok-bg: #0a3028; --ok-t: #7dd4b0;
+        --err-bg: #3a1515; --err-t: #f09595;
+        --warn-bg: #3a2a10; --warn-t: #f0c060;
+        --t-acuerdo-bg: #0a3028; --t-acuerdo-t: #7dd4b0;
+        --t-tema-bg: #1a3050; --t-tema-t: #8bbef0;
+        --t-seg-bg: #3a2a10; --t-seg-t: #f0c060;
+        --t-gen-bg: #333; --t-gen-t: #bbb;
+        --hl-bg: #3a2a10; --hl-t: #f0c060;
+      }
+    }
+    body { font-family: var(--font); background: var(--bg-page); color: var(--text-1); line-height: 1.6; min-height: 100vh; }
+    .shell { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* Header */
+    .header { background: var(--bg-card); border-bottom: 1px solid var(--border); padding: 0.85rem 0; position: sticky; top: 0; z-index: 100; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .logo-icon svg { width: 20px; height: 20px; }
+    .logo-title { font-size: 17px; font-weight: 600; color: var(--text-1); letter-spacing: -0.3px; }
+    .logo-sub { font-size: 11px; color: var(--text-3); }
+    .nav-links { display: flex; gap: 4px; }
+    .nav-btn { padding: 7px 16px; font-size: 13px; font-family: var(--font); border-radius: 8px; border: 1px solid transparent; background: transparent; color: var(--text-2); cursor: pointer; font-weight: 500; transition: all .15s; }
+    .nav-btn:hover { background: var(--bg-surface); }
+    .nav-btn.active { background: var(--accent-bg); color: var(--accent-t); }
+
+    .main { padding: 1.5rem 0 3rem; }
+
+    /* Welcome / home */
+    .welcome { text-align: center; padding: 2.5rem 0 1.5rem; }
+    .welcome-title { font-size: 24px; font-weight: 600; margin-bottom: 6px; color: var(--text-1); }
+    .welcome-desc { font-size: 15px; color: var(--text-2); max-width: 520px; margin: 0 auto 2rem; line-height: 1.6; }
+    .stat-grid { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.5rem; min-width: 140px; text-align: center; }
+    .stat-num { font-size: 28px; font-weight: 600; color: var(--accent); line-height: 1.2; }
+    .stat-label { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+    .recent-section { margin-top: 2rem; text-align: left; }
+    .recent-title { font-size: 14px; font-weight: 600; color: var(--text-2); margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+
+    /* Search */
+    .search-box { position: relative; margin-bottom: 1rem; }
+    .search-box input { width: 100%; padding: 14px 18px 14px 46px; font-size: 15px; font-family: var(--font); border: 1px solid var(--border); border-radius: 12px; background: var(--bg-card); color: var(--text-1); outline: none; transition: border-color .15s; }
+    .search-box input::placeholder { color: var(--text-3); }
+    .search-box input:focus { border-color: var(--accent); }
+    .search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--text-3); }
+
+    /* Filters */
+    .filters-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 1rem; }
+    .chips { display: flex; gap: 4px; flex-wrap: wrap; }
+    .chip { padding: 5px 13px; font-size: 12px; font-family: var(--font); border-radius: 20px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-2); cursor: pointer; font-weight: 500; transition: all .15s; }
+    .chip:hover { border-color: var(--border-h); }
+    .chip.active { background: var(--accent-bg); color: var(--accent-t); border-color: transparent; }
+    .date-filters { display: flex; align-items: center; gap: 5px; margin-left: auto; }
+    .date-filters label { font-size: 12px; color: var(--text-3); white-space: nowrap; }
+    .date-input { padding: 5px 8px; font-size: 12px; font-family: var(--font); border: 1px solid var(--border); border-radius: 8px; background: var(--bg-card); color: var(--text-1); outline: none; width: 130px; }
+    .date-input:focus { border-color: var(--accent); }
+    .date-clear { padding: 4px 10px; font-size: 11px; font-family: var(--font); border-radius: 6px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-3); cursor: pointer; }
+    .date-clear:hover { background: var(--bg-surface); }
+
+    .stats-bar { font-size: 13px; color: var(--text-3); padding-bottom: 0.75rem; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+
+    /* Result cards */
+    .rc { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1rem 1.25rem; margin-bottom: 10px; transition: border-color .15s; }
+    .rc:hover { border-color: var(--border-h); }
+    .rc-meta { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; flex-wrap: wrap; }
+    .badge-date { font-size: 11px; padding: 2px 9px; border-radius: 6px; background: var(--bg-hover); color: var(--text-2); }
+    .badge-type { font-size: 10px; padding: 2px 9px; border-radius: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: .3px; }
+    .bt-acuerdo { background: var(--t-acuerdo-bg); color: var(--t-acuerdo-t); }
+    .bt-tema { background: var(--t-tema-bg); color: var(--t-tema-t); }
+    .bt-seguimiento { background: var(--t-seg-bg); color: var(--t-seg-t); }
+    .bt-general { background: var(--t-gen-bg); color: var(--t-gen-t); }
+    .rc-area { font-size: 11px; color: var(--text-3); margin-bottom: 3px; }
+    .rc-title { font-size: 15px; font-weight: 600; color: var(--text-1); margin-bottom: 4px; line-height: 1.4; }
+    .rc-body { font-size: 14px; color: var(--text-2); line-height: 1.65; }
+    .rc-body mark { background: var(--hl-bg); color: var(--hl-t); padding: 0 3px; border-radius: 3px; }
+    .rc-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 8px; }
+    .rc-tag { font-size: 10px; padding: 1px 7px; border-radius: 4px; background: var(--bg-hover); color: var(--text-3); }
+    .rc-acta { font-size: 11px; color: var(--text-3); margin-top: 8px; }
+    .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-3); font-size: 14px; }
+
+    /* Pagination */
+    .pagination { display: flex; justify-content: center; gap: 4px; margin-top: 1.5rem; }
+    .page-btn { padding: 6px 14px; font-size: 13px; font-family: var(--font); border-radius: 8px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-2); cursor: pointer; font-weight: 500; }
+    .page-btn:hover { border-color: var(--border-h); }
+    .page-btn.active { background: var(--accent-bg); color: var(--accent-t); border-color: transparent; }
+    .page-btn:disabled { opacity: .4; cursor: default; }
+
+    /* Admin */
+    .login-box { max-width: 360px; margin: 4rem auto; text-align: center; }
+    .login-box p { font-size: 14px; color: var(--text-2); margin-bottom: 1.25rem; line-height: 1.6; }
+    .login-input { width: 100%; padding: 12px 16px; font-size: 14px; font-family: var(--font); border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); color: var(--text-1); margin-bottom: 10px; outline: none; }
+    .login-input:focus { border-color: var(--accent); }
+    .admin-section { margin-bottom: 2rem; }
+    .admin-label { font-size: 15px; font-weight: 600; color: var(--text-1); margin-bottom: 6px; }
+    .admin-sublabel { font-size: 13px; color: var(--text-2); margin-bottom: 12px; line-height: 1.6; }
+    .admin-textarea { width: 100%; min-height: 200px; padding: 14px; font-size: 13px; font-family: var(--mono); border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); color: var(--text-1); resize: vertical; outline: none; line-height: 1.6; }
+    .admin-textarea:focus { border-color: var(--accent); }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; font-size: 14px; font-family: var(--font); font-weight: 500; border-radius: var(--radius); border: none; cursor: pointer; transition: all .15s; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { opacity: .9; }
+    .btn-primary:disabled { opacity: .4; cursor: default; }
+    .btn-outline { background: var(--bg-card); color: var(--text-1); border: 1px solid var(--border); }
+    .btn-outline:hover { background: var(--bg-surface); }
+    .btn-danger { background: var(--bg-card); color: var(--err-t); border: 1px solid var(--border); }
+    .btn-danger:hover { background: var(--err-bg); }
+    .btn-sm { padding: 5px 12px; font-size: 12px; border-radius: 6px; }
+    .msg { padding: 12px 16px; border-radius: var(--radius); font-size: 13px; margin-bottom: 1.25rem; line-height: 1.5; }
+    .msg-ok { background: var(--ok-bg); color: var(--ok-t); }
+    .msg-err { background: var(--err-bg); color: var(--err-t); }
+    .msg-warn { background: var(--warn-bg); color: var(--warn-t); }
+    .msg-info { background: var(--accent-bg); color: var(--accent-t); }
+    .preview-card { background: var(--bg-surface); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; border: 1px solid var(--border); }
+    .preview-title { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+    .preview-item { font-size: 13px; color: var(--text-2); padding: 3px 0; line-height: 1.5; }
+    .acta-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 6px; font-size: 13px; }
+    .acta-row-info { color: var(--text-1); font-weight: 500; }
+    .acta-row-count { color: var(--text-3); font-size: 12px; }
+    .prompt-box { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; padding-right: 5rem; font-size: 12px; font-family: var(--mono); color: var(--text-2); line-height: 1.7; white-space: pre-wrap; max-height: 220px; overflow-y: auto; position: relative; margin-bottom: 1rem; }
+    .copy-btn { position: absolute; top: 8px; right: 8px; padding: 4px 12px; font-size: 11px; font-family: var(--font); border-radius: 6px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-2); cursor: pointer; }
+    .copy-btn:hover { background: var(--bg-hover); }
+    .step { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 13px; color: var(--text-2); line-height: 1.5; }
+    .step-n { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; min-width: 24px; border-radius: 50%; background: var(--accent-bg); color: var(--accent-t); font-size: 12px; font-weight: 600; }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+    .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid #fff4; border-top-color: #fff; border-radius: 50%; animation: spin .6s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .footer { text-align: center; padding: 2rem 0; font-size: 12px; color: var(--text-3); border-top: 1px solid var(--border); }
+    a { color: var(--accent); }
+    /* Admin tabs */
+    .admin-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; }
+    .admin-tab { padding: 10px 20px; font-size: 13px; font-family: var(--font); font-weight: 500; color: var(--text-3); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: all .15s; }
+    .admin-tab:hover { color: var(--text-2); }
+    .admin-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .admin-tab-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 10px; background: var(--bg-hover); color: var(--text-3); font-size: 11px; font-weight: 600; margin-left: 6px; }
+    .admin-tab.active .admin-tab-badge { background: var(--accent-bg); color: var(--accent-t); }
+    .admin-pane { display: none; }
+    .admin-pane.active { display: block; }
+    @media (max-width: 640px) {
+      .filters-row { flex-direction: column; align-items: stretch; }
+      .date-filters { margin-left: 0; flex-wrap: wrap; }
+      .header-inner { gap: .5rem; }
+      .stat-grid { gap: 8px; }
+      .stat-card { min-width: 100px; padding: .75rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="shell header-inner">
+      <a class="logo" href="/" onclick="event.preventDefault();switchView('search');">
+        <img src="./logo_CPA.jpg" alt="CPA" style="width:40px;height:40px;border-radius:50%;object-fit:cover;">
+        <div><div class="logo-title">Buscador CPA</div><div class="logo-sub">INAOE — Colegio del Personal Académico</div></div>
+      </a>
+      <div class="nav-links">
+        <button class="nav-btn active" id="navSearch" onclick="switchView('search')">Buscador</button>
+        <button class="nav-btn" id="navAdmin" onclick="switchView('admin')">Administrar</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="shell">
+      <div id="viewSearch"></div>
+      <div id="viewAdmin" style="display:none;"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="shell">INAOE — Colegio del Personal Académico · Tonantzintla, Puebla</div>
+  </footer>
+
+<script>
+// ═══════════════════════════════════════════
+//  CONFIG
+// ═══════════════════════════════════════════
+const ADMIN_PASSWORD = 'CPA2026!';
+const ITEMS_PER_PAGE = 15;
+
+const PROMPT_TEXT = `Eres un asistente que estructura actas del Colegio del Personal Académico (CPA) del INAOE en formato JSON.
+
+A partir del texto del acta que te proporcione, genera un JSON con esta estructura exacta:
+
+{
+  "acta": "[número de acta tal como aparece en el documento, ej: CPA-28082025]",
+  "fecha": "YYYY-MM-DD",
+  "fechaLabel": "[fecha en formato legible, ej: 28 de agosto de 2025]",
+  "items": [
+    {
+      "tipo": "acuerdo | tema | seguimiento | general",
+      "titulo": "[título conciso del punto]",
+      "texto": "[resumen del contenido, máximo 2-3 oraciones]",
+      "tags": ["palabra1", "palabra2", "..."],
+      "area": "[área o coordinación si aplica, ej: Coordinación de Óptica]"
+    }
+  ]
+}
+
+Reglas:
+- tipo "acuerdo": decisiones formales con número de acuerdo (ACUERDO 1.- CPAEX-..., etc.)
+- tipo "seguimiento": puntos de seguimiento de acuerdos de sesiones previas
+- tipo "tema": asuntos discutidos, votaciones, presentaciones, propuestas (sin ser acuerdo formal)
+- tipo "general": asuntos generales, informes breves, temas varios
+- Los tags deben incluir: nombres de personas mencionadas, áreas o coordinaciones, temas clave, resultados de votaciones relevantes, y sinónimos útiles para búsqueda
+- El campo "area" solo se incluye si el punto está claramente bajo una coordinación o dirección específica
+- Para votaciones, incluir el resultado resumido en el texto
+- Responde SOLO con el JSON, sin texto adicional, sin backticks, sin markdown`;
+
+const TYPES = [
+  { k:'all', l:'Todos' }, { k:'acuerdo', l:'Acuerdos' }, { k:'tema', l:'Temas' },
+  { k:'seguimiento', l:'Seguimiento' }, { k:'general', l:'Generales' }
+];
+const TL = { acuerdo:'Acuerdo', tema:'Tema', seguimiento:'Seguimiento', general:'General' };
+const TC = { acuerdo:'bt-acuerdo', tema:'bt-tema', seguimiento:'bt-seguimiento', general:'bt-general' };
+
+// ═══════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════
+let db = [];
+let currentView = 'search';
+let loggedIn = false;
+let activeType = 'all';
+let currentPage = 1;
+let adminMsg = null;
+let previewData = null;
+let saving = false;
+let hasSearched = false;
+let adminTab = 'add';
+let overwriteMode = false;
+
+// ═══════════════════════════════════════════
+//  DATA — loads from static file (source of truth)
+// ═══════════════════════════════════════════
+async function loadDB() {
+  try {
+    const r = await fetch('./data/actas.json?t=' + Date.now());
+    if (r.ok) db = await r.json();
+  } catch(e) { console.error('Error loading data:', e); db = []; }
+}
+
+// ═══════════════════════════════════════════
+//  UTILITIES
+// ═══════════════════════════════════════════
+function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function norm(s) { return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(); }
+function tok(s) { return norm(s).split(/\s+/).filter(t=>t.length>1); }
+
+function score(item, tokens) {
+  if (!tokens.length) return 1;
+  let s=0;
+  const ti=norm(item.titulo), tx=norm(item.texto), tg=item.tags.map(t=>norm(t)).join(' '), ar=item.area?norm(item.area):'';
+  for (const t of tokens) { if(ti.includes(t))s+=3; if(tg.includes(t))s+=2; if(tx.includes(t))s+=1; if(ar.includes(t))s+=1; }
+  return s;
+}
+
+function hl(text, tokens) {
+  if (!tokens.length) return esc(text);
+  const e=esc(text), n=norm(text); let ranges=[];
+  for (const t of tokens) { let i=0; while((i=n.indexOf(t,i))!==-1){ranges.push([i,i+t.length]);i+=t.length;} }
+  ranges.sort((a,b)=>a[0]-b[0]);
+  let m=[]; for(const r of ranges){if(m.length&&r[0]<=m[m.length-1][1])m[m.length-1][1]=Math.max(m[m.length-1][1],r[1]);else m.push([...r]);}
+  let res='',last=0; for(const[s,e2]of m){res+=e.slice(last,s)+'<mark>'+e.slice(s,e2)+'</mark>';last=e2;} res+=e.slice(last);
+  return res;
+}
+
+// ═══════════════════════════════════════════
+//  NAVIGATION
+// ═══════════════════════════════════════════
+function switchView(v) {
+  currentView = v;
+  document.getElementById('navSearch').classList.toggle('active', v==='search');
+  document.getElementById('navAdmin').classList.toggle('active', v==='admin');
+  document.getElementById('viewSearch').style.display = v==='search' ? '' : 'none';
+  document.getElementById('viewAdmin').style.display = v==='admin' ? '' : 'none';
+  if (v==='search') renderSearchView();
+  if (v==='admin') renderAdmin();
+}
+
+// ═══════════════════════════════════════════
+//  SEARCH VIEW
+// ═══════════════════════════════════════════
+function renderSearchView() {
+  const el = document.getElementById('viewSearch');
+  el.innerHTML = `
+    <div class="search-box">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="si" placeholder="Buscar: EDAs, reglamento, Óptica, bungalows, votación...">
+    </div>
+    <div class="filters-row">
+      <div class="chips" id="chips"></div>
+      <div class="date-filters">
+        <label>Desde</label>
+        <input type="date" class="date-input" id="dateFrom">
+        <label>hasta</label>
+        <input type="date" class="date-input" id="dateTo">
+        <button class="date-clear" id="dateClear" title="Limpiar fechas">✕</button>
+      </div>
+    </div>
+    <div id="searchContent"></div>`;
+
+  const chips = document.getElementById('chips');
+  chips.innerHTML = TYPES.map(t=>
+    `<span class="chip ${t.k===activeType?'active':''}" data-t="${t.k}">${t.l}</span>`
+  ).join('');
+  chips.onclick = e => {
+    const c=e.target.closest('.chip'); if(!c) return;
+    activeType=c.dataset.t; currentPage=1;
+    chips.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.t===activeType));
+    doSearch();
+  };
+  document.getElementById('si').oninput = () => { hasSearched=true; currentPage=1; doSearch(); };
+  document.getElementById('dateFrom').onchange = () => { hasSearched=true; currentPage=1; doSearch(); };
+  document.getElementById('dateTo').onchange = () => { hasSearched=true; currentPage=1; doSearch(); };
+  document.getElementById('dateClear').onclick = () => {
+    document.getElementById('dateFrom').value='';
+    document.getElementById('dateTo').value='';
+    if (hasSearched) { currentPage=1; doSearch(); }
+  };
+
+  if (hasSearched) doSearch();
+  else renderWelcome();
+}
+
+function renderWelcome() {
+  const totalItems = db.reduce((s,a)=>s+a.items.length, 0);
+  const totalAcuerdos = db.reduce((s,a)=>s+a.items.filter(i=>i.tipo==='acuerdo').length, 0);
+  const fechas = db.map(a=>a.fecha).sort();
+  const desde = fechas.length ? db.find(a=>a.fecha===fechas[0])?.fechaLabel || fechas[0] : '—';
+  const hasta = fechas.length ? db.find(a=>a.fecha===fechas[fechas.length-1])?.fechaLabel || fechas[fechas.length-1] : '—';
+
+  // Last 5 acuerdos
+  let recentAcuerdos = [];
+  for (const a of [...db].sort((x,y)=>y.fecha.localeCompare(x.fecha))) {
+    for (const item of a.items) {
+      if (item.tipo==='acuerdo') {
+        recentAcuerdos.push({...item, fechaLabel:a.fechaLabel, acta:a.acta});
+        if (recentAcuerdos.length>=5) break;
+      }
+    }
+    if (recentAcuerdos.length>=5) break;
+  }
+
+  document.getElementById('searchContent').innerHTML = `
+    <div class="welcome">
+      <div class="welcome-title">Busca en las actas del CPA</div>
+      <div class="welcome-desc">Escribe palabras clave arriba para buscar acuerdos, temas y discusiones de las sesiones del Colegio del Personal Académico.</div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-num">${db.length}</div><div class="stat-label">Actas</div></div>
+        <div class="stat-card"><div class="stat-num">${totalAcuerdos}</div><div class="stat-label">Acuerdos</div></div>
+        <div class="stat-card"><div class="stat-num">${totalItems}</div><div class="stat-label">Puntos totales</div></div>
+      </div>
+      ${db.length ? `<div style="font-size:13px;color:var(--text-3);">Periodo: ${esc(desde)} — ${esc(hasta)}</div>` : ''}
+    </div>
+    ${recentAcuerdos.length ? `
+      <div class="recent-section">
+        <div class="recent-title">Últimos acuerdos</div>
+        ${recentAcuerdos.map(r=>`
+          <div class="rc">
+            <div class="rc-meta">
+              <span class="badge-date">${esc(r.fechaLabel)}</span>
+              <span class="badge-type bt-acuerdo">Acuerdo</span>
+            </div>
+            ${r.area?`<div class="rc-area">${esc(r.area)}</div>`:''}
+            <div class="rc-title">${esc(r.titulo)}</div>
+            <div class="rc-body">${esc(r.texto)}</div>
+          </div>`).join('')}
+      </div>` : ''}`;
+}
+
+function doSearch() {
+  const q = document.getElementById('si').value.trim();
+  const tokens = tok(q);
+  const df = document.getElementById('dateFrom').value;
+  const dt = document.getElementById('dateTo').value;
+
+  // If no active filters at all, show welcome
+  if (!q && !df && !dt && activeType==='all') {
+    hasSearched = false;
+    renderWelcome();
+    return;
+  }
+
+  let results = [];
+  for (const acta of db) {
+    if (df && acta.fecha < df) continue;
+    if (dt && acta.fecha > dt) continue;
+    for (const item of acta.items) {
+      if (activeType!=='all' && item.tipo!==activeType) continue;
+      const s = score(item, tokens);
+      if (s > 0) results.push({...item, acta:acta.acta, fecha:acta.fecha, fechaLabel:acta.fechaLabel, score:s});
+    }
+  }
+  results.sort((a,b) => b.score-a.score || b.fecha.localeCompare(a.fecha));
+
+  const total = results.length;
+  const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
+  if (currentPage > totalPages) currentPage = totalPages || 1;
+  const start = (currentPage-1)*ITEMS_PER_PAGE;
+  const page = results.slice(start, start+ITEMS_PER_PAGE);
+  const ua = new Set(results.map(r=>r.acta)).size;
+  const na = results.filter(r=>r.tipo==='acuerdo').length;
+
+  const content = document.getElementById('searchContent');
+
+  let html = `<div class="stats-bar">${total} resultado${total!==1?'s':''} en ${ua} acta${ua!==1?'s':''}${na?' — '+na+' acuerdo'+(na!==1?'s':''):''}</div>`;
+
+  if (!total) {
+    html += '<div class="empty-state">No se encontraron resultados. Intenta con otros términos de búsqueda.</div>';
+    content.innerHTML = html;
+    return;
+  }
+
+  html += page.map(r=>`
+    <div class="rc">
+      <div class="rc-meta">
+        <span class="badge-date">${esc(r.fechaLabel)}</span>
+        <span class="badge-type ${TC[r.tipo]}">${TL[r.tipo]}</span>
+      </div>
+      ${r.area?`<div class="rc-area">${esc(r.area)}</div>`:''}
+      <div class="rc-title">${hl(r.titulo,tokens)}</div>
+      <div class="rc-body">${hl(r.texto,tokens)}</div>
+      <div class="rc-tags">${r.tags.map(t=>`<span class="rc-tag">${esc(t)}</span>`).join('')}</div>
+      <div class="rc-acta">Acta: ${esc(r.acta)}</div>
+    </div>`).join('');
+
+  // Pagination
+  if (totalPages > 1) {
+    html += '<div class="pagination">';
+    html += `<button class="page-btn" ${currentPage<=1?'disabled':''} onclick="goPage(${currentPage-1})">← Anterior</button>`;
+    for (let p=1; p<=totalPages; p++) {
+      if (totalPages > 7 && p > 2 && p < totalPages-1 && Math.abs(p-currentPage) > 1) {
+        if (p===3 || p===totalPages-2) html += '<span style="padding:6px 4px;color:var(--text-3);">…</span>';
+        continue;
+      }
+      html += `<button class="page-btn ${p===currentPage?'active':''}" onclick="goPage(${p})">${p}</button>`;
+    }
+    html += `<button class="page-btn" ${currentPage>=totalPages?'disabled':''} onclick="goPage(${currentPage+1})">Siguiente →</button>`;
+    html += '</div>';
+  }
+
+  content.innerHTML = html;
+}
+
+function goPage(p) {
+  currentPage = p;
+  doSearch();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// ═══════════════════════════════════════════
+//  ADMIN VIEW
+// ═══════════════════════════════════════════
+function renderAdmin() {
+  const el = document.getElementById('viewAdmin');
+
+  if (!loggedIn) {
+    el.innerHTML = `
+      <div class="login-box">
+        <p>Ingresa la contraseña de administrador para gestionar las actas.</p>
+        <input type="password" class="login-input" id="adminPw" placeholder="Contraseña">
+        <button class="btn btn-primary" style="width:100%" onclick="doLogin()">Entrar</button>
+      </div>`;
+    document.getElementById('adminPw').onkeydown = e => { if(e.key==='Enter') doLogin(); };
+    return;
+  }
+
+  const sorted = [...db].sort((a,b) => b.fecha.localeCompare(a.fecha));
+
+  el.innerHTML = `
+    ${adminMsg ? `<div class="msg ${adminMsg.c}">${adminMsg.t}</div>` : ''}
+
+    <div class="admin-tabs">
+      <button class="admin-tab ${adminTab==='add'?'active':''}" onclick="adminTab='add';renderAdmin();">Agregar acta</button>
+      <button class="admin-tab ${adminTab==='list'?'active':''}" onclick="adminTab='list';renderAdmin();">Actas cargadas<span class="admin-tab-badge">${db.length}</span></button>
+      <button class="admin-tab ${adminTab==='tools'?'active':''}" onclick="adminTab='tools';renderAdmin();">Herramientas</button>
+    </div>
+
+    <!-- ── TAB: Agregar acta ── -->
+    <div class="admin-pane ${adminTab==='add'?'active':''}">
+      <div class="admin-section">
+        <div class="admin-label">Agregar nueva acta</div>
+        <div class="admin-sublabel">Sigue estos pasos para agregar una nueva sesión:</div>
+
+        <div class="step">
+          <span class="step-n">1</span>
+          <span>Abre cualquier plataforma de IA (<a href="https://chatgpt.com/" target="_blank">ChatGPT</a>, <a href="https://gemini.google.com/?hl=es" target="_blank">Gemini</a>, <a href="https://claude.ai" target="_blank">Claude</a>, <a href="https://grok.com/" target="_blank">Grok</a>) y pega el prompt de abajo junto con el texto completo del acta (copia/pega del PDF):</span>
+        </div>
+        <div style="position:relative;margin-left:34px;margin-bottom:16px;">
+          <div class="prompt-box">${esc(PROMPT_TEXT)}</div>
+          <button class="copy-btn" onclick="copyPrompt()">Copiar prompt</button>
+        </div>
+
+        <div class="step">
+          <span class="step-n">2</span>
+          <span>La IA te devolverá un JSON estructurado. Cópialo completo.</span>
+        </div>
+        <div class="step">
+          <span class="step-n">3</span>
+          <span>Pégalo aquí y haz clic en <strong>Validar y previsualizar</strong>:</span>
+        </div>
+
+        <textarea class="admin-textarea" id="jsonInput" placeholder="Pega aquí el JSON generado por la IA..."></textarea>
+        <div style="margin-top:12px;">
+          <button class="btn btn-primary" onclick="validateJSON()">Validar y previsualizar</button>
+        </div>
+      </div>
+
+      ${previewData ? renderPreview() : ''}
+    </div>
+
+    <!-- ── TAB: Actas cargadas ── -->
+    <div class="admin-pane ${adminTab==='list'?'active':''}">
+      <div class="admin-section">
+        <div class="admin-label">Actas cargadas (${db.length})</div>
+        <div class="admin-sublabel">Lista de todas las actas en la base de datos, ordenadas de la más reciente a la más antigua.</div>
+        <div id="actasList">
+          ${sorted.map(a => {
+            const na = a.items.filter(i=>i.tipo==='acuerdo').length;
+            return `<div class="acta-row">
+              <span class="acta-row-info">${esc(a.fechaLabel)}</span>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <span class="acta-row-count">${a.items.length} puntos · ${na} acuerdo${na!==1?'s':''}</span>
+                <button class="btn btn-danger btn-sm" onclick="deleteActa('${esc(a.acta).replace(/'/g,"\\'")}')">Eliminar</button>
+              </div>
+            </div>`;
+          }).join('')}
+          ${db.length === 0 ? '<div class="empty-state">No hay actas cargadas.</div>' : ''}
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TAB: Herramientas ── -->
+    <div class="admin-pane ${adminTab==='tools'?'active':''}">
+      <div class="admin-section">
+        <div class="admin-label">Respaldos</div>
+        <div class="admin-sublabel">Exporta la base de datos como respaldo o importa un archivo previamente exportado.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+          <button class="btn btn-outline" onclick="exportDB()">Exportar respaldo (JSON)</button>
+          <button class="btn btn-outline" onclick="document.getElementById('importFile').click()">Importar respaldo</button>
+        </div>
+        <input type="file" id="importFile" accept=".json" style="display:none" onchange="handleImport(event)">
+      </div>
+
+      <hr class="divider">
+
+      <div style="text-align:right;">
+        <button class="btn btn-outline" onclick="doLogout()">Cerrar sesión</button>
+      </div>
+    </div>`;
+  adminMsg = null;
+}
+
+function renderPreview() {
+  const p = previewData;
+  const na = p.items.filter(i=>i.tipo==='acuerdo').length;
+  return `
+    <div class="admin-section" style="margin-top:1.5rem;">
+      <div class="preview-card">
+        <div class="preview-title">Previsualización: ${esc(p.fechaLabel)}</div>
+        <div class="preview-item" style="margin-bottom:10px;">Acta: ${esc(p.acta)} — ${p.items.length} puntos, ${na} acuerdo${na!==1?'s':''}</div>
+        ${p.items.map(i=>`<div class="preview-item">
+          <span class="badge-type ${TC[i.tipo]}" style="font-size:10px;vertical-align:middle;margin-right:4px;">${TL[i.tipo]}</span>
+          ${esc(i.titulo)}
+        </div>`).join('')}
+      </div>
+      ${overwriteMode ? `<div class="msg msg-warn" style="margin-bottom:12px;">Esta acta ya existe en la base de datos. Al confirmar, se reemplazará la versión anterior con estos nuevos datos.</div>` : ''}
+      <div style="display:flex;gap:8px;">
+        <button class="btn ${overwriteMode?'btn-danger':'btn-primary'}" id="confirmBtn" onclick="confirmSave()" ${saving?'disabled':''}>${saving?'<span class="spinner"></span> Guardando...':(overwriteMode?'Sobrescribir acta existente':'Confirmar y guardar')}</button>
+        <button class="btn btn-outline" onclick="cancelPreview()" ${saving?'disabled':''}>Cancelar</button>
+      </div>
+    </div>`;
+}
+
+// ═══════════════════════════════════════════
+//  ADMIN ACTIONS
+// ═══════════════════════════════════════════
+function doLogin() {
+  const pw = document.getElementById('adminPw').value;
+  if (pw === ADMIN_PASSWORD) { loggedIn=true; renderAdmin(); }
+  else { const el=document.getElementById('adminPw'); el.style.borderColor='var(--err-t)'; el.value=''; el.placeholder='Contraseña incorrecta'; }
+}
+function doLogout() { loggedIn=false; previewData=null; adminMsg=null; switchView('search'); }
+
+function copyPrompt() {
+  navigator.clipboard.writeText(PROMPT_TEXT).then(()=>{
+    const btns=document.querySelectorAll('.copy-btn');
+    btns.forEach(b=>{b.textContent='¡Copiado!'; setTimeout(()=>{try{b.textContent='Copiar prompt';}catch(e){}},2000);});
+  });
+}
+
+function validateJSON() {
+  let raw = document.getElementById('jsonInput').value.trim();
+  if (!raw) { adminMsg={c:'msg-err',t:'Pega el JSON antes de validar.'}; previewData=null; renderAdmin(); return; }
+
+  let parsed;
+  try {
+    let clean = raw;
+    if (clean.startsWith('```')) clean = clean.replace(/^```(?:json)?\n?/,'').replace(/\n?```$/,'');
+    parsed = JSON.parse(clean);
+  } catch(e) { adminMsg={c:'msg-err',t:'JSON inválido: '+e.message}; previewData=null; renderAdmin(); return; }
+
+  if (!parsed.acta || !parsed.fecha || !parsed.fechaLabel || !Array.isArray(parsed.items)) {
+    adminMsg={c:'msg-err',t:'Estructura incorrecta. Debe tener: acta, fecha, fechaLabel, items[].'}; previewData=null; renderAdmin(); return;
+  }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(parsed.fecha)) {
+    adminMsg={c:'msg-err',t:'El campo "fecha" debe ser YYYY-MM-DD.'}; previewData=null; renderAdmin(); return;
+  }
+  const vt = ['acuerdo','tema','seguimiento','general'];
+  for (let i=0; i<parsed.items.length; i++) {
+    const it=parsed.items[i];
+    if (!it.tipo||!it.titulo||!it.texto||!Array.isArray(it.tags)) {
+      adminMsg={c:'msg-err',t:`Item #${i+1}: falta tipo, titulo, texto o tags[].`}; previewData=null; renderAdmin(); return;
+    }
+    if (!vt.includes(it.tipo)) {
+      adminMsg={c:'msg-err',t:`Item #${i+1}: tipo "${it.tipo}" inválido.`}; previewData=null; renderAdmin(); return;
+    }
+  }
+  if (db.some(a=>a.acta===parsed.acta)) {
+    overwriteMode = true;
+    const existing = db.find(a=>a.acta===parsed.acta);
+    previewData = parsed;
+    adminMsg = {c:'msg-warn',t:`Ya existe el acta "${parsed.acta}" (${existing.fechaLabel}, ${existing.items.length} puntos). Si continúas, se sobrescribirá con los nuevos datos.`};
+    renderAdmin();
+    document.getElementById('jsonInput').value = raw;
+    return;
+  }
+  overwriteMode = false;
+
+  previewData = parsed;
+  adminMsg = {c:'msg-ok',t:`JSON válido — ${parsed.items.length} puntos. Revisa y confirma.`};
+  renderAdmin();
+  document.getElementById('jsonInput').value = raw;
+}
+
+async function confirmSave() {
+  if (!previewData || saving) return;
+  saving = true;
+  renderAdmin();
+
+  // If overwriting, remove the old acta first
+  const baseDb = overwriteMode ? db.filter(a=>a.acta!==previewData.acta) : db;
+  const newDb = [...baseDb, previewData];
+  const action = overwriteMode ? 'sobrescrita' : 'guardada';
+
+  try {
+    // Try saving via serverless function (GitHub)
+    const resp = await fetch('/.netlify/functions/save-actas', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ password: ADMIN_PASSWORD, actas: newDb })
+    });
+    const result = await resp.json();
+
+    if (resp.ok && result.success) {
+      db = newDb;
+      adminMsg = {c:'msg-ok', t:`¡Acta "${previewData.acta}" ${action}! ${result.message}`};
+      previewData = null; overwriteMode = false;
+    } else {
+      // If function fails (not configured), fall back to localStorage
+      console.warn('GitHub save failed, using localStorage fallback:', result.error);
+      db = newDb;
+      localStorage.setItem('cpa_actas_local', JSON.stringify(db));
+      adminMsg = {c:'msg-warn', t:`Acta ${action} localmente (solo visible en este navegador). Para que sea visible para todos, configura la conexión con GitHub. Error: ${result.error}`};
+      previewData = null; overwriteMode = false;
+    }
+  } catch(e) {
+    // Network error or function not available — localStorage fallback
+    console.warn('Save function unavailable, using localStorage:', e);
+    db = newDb;
+    localStorage.setItem('cpa_actas_local', JSON.stringify(db));
+    adminMsg = {c:'msg-warn', t:`Acta ${action} localmente (solo visible en este navegador). Para que todos la vean, configura la conexión con GitHub. Ver instrucciones en README.`};
+    previewData = null; overwriteMode = false;
+  }
+
+  saving = false;
+  renderAdmin();
+}
+
+async function deleteActa(actaId) {
+  if (!confirm('¿Eliminar el acta "'+actaId+'"?')) return;
+  const newDb = db.filter(a=>a.acta!==actaId);
+
+  try {
+    const resp = await fetch('/.netlify/functions/save-actas', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({password:ADMIN_PASSWORD, actas:newDb, commitMessage:`Eliminar acta: ${actaId}`})
+    });
+    const result = await resp.json();
+    if (resp.ok && result.success) {
+      db = newDb;
+      adminMsg = {c:'msg-ok',t:'Acta eliminada. El sitio se actualizará en ~1 minuto.'};
+    } else {
+      db = newDb;
+      localStorage.setItem('cpa_actas_local', JSON.stringify(db));
+      adminMsg = {c:'msg-warn',t:'Acta eliminada localmente.'};
+    }
+  } catch(e) {
+    db = newDb;
+    localStorage.setItem('cpa_actas_local', JSON.stringify(db));
+    adminMsg = {c:'msg-warn',t:'Acta eliminada localmente.'};
+  }
+  renderAdmin();
+}
+
+function cancelPreview() { previewData=null; adminMsg=null; overwriteMode=false; renderAdmin(); }
+
+function exportDB() {
+  const blob = new Blob([JSON.stringify(db,null,2)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='cpa_actas_backup_'+new Date().toISOString().slice(0,10)+'.json';
+  a.click(); URL.revokeObjectURL(a.href);
+}
+
+function handleImport(event) {
+  const file = event.target.files[0]; if(!file) return;
+  const reader = new FileReader();
+  reader.onload = async function(e) {
+    try {
+      const imported = JSON.parse(e.target.result);
+      if (!Array.isArray(imported)) throw new Error('Debe ser un array de actas.');
+
+      // Try to save to GitHub
+      try {
+        const resp = await fetch('/.netlify/functions/save-actas', {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({password:ADMIN_PASSWORD, actas:imported, commitMessage:'Importar base de datos'})
+        });
+        if (resp.ok) {
+          db = imported;
+          adminMsg = {c:'msg-ok',t:`Base importada: ${db.length} actas. El sitio se actualizará en ~1 minuto.`};
+        } else throw new Error('fallback');
+      } catch(e2) {
+        db = imported;
+        localStorage.setItem('cpa_actas_local', JSON.stringify(db));
+        adminMsg = {c:'msg-warn',t:`Base importada localmente: ${db.length} actas.`};
+      }
+      renderAdmin();
+    } catch(err) {
+      adminMsg = {c:'msg-err',t:'Error al importar: '+err.message}; renderAdmin();
+    }
+  };
+  reader.readAsText(file);
+  event.target.value = '';
+}
+
+// ═══════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════
+(async function init() {
+  await loadDB();
+
+  // If GitHub data is empty but we have localStorage fallback, use that
+  if (db.length === 0) {
+    try {
+      const local = localStorage.getItem('cpa_actas_local');
+      if (local) db = JSON.parse(local);
+    } catch(e) {}
+  }
+
+  renderSearchView();
+})();
+</script>
+</body>
+</html>
