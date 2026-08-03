@@ -94,5 +94,72 @@
       }
     ],
     "archivo": "CPA-2025-03-13.pdf"
+  },
+  {
+    "acta": "CPA-10042025",
+    "fecha": "2025-04-10",
+    "fechaLabel": "10 de abril de 2025",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Ratificación de representantes de Astrofísica",
+        "texto": "Se ratificó por unanimidad a Yalia Divakara Mayya como titular y a Fabian Rosales como suplente para representar a la coordinación de Astrofísica.",
+        "tags": [
+          "Astrofísica",
+          "Yalia Divakara Mayya",
+          "Fabian Rosales",
+          "representantes"
+        ],
+        "area": "Coordinación de Astrofísica"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Modificación de Tabla de Puntaje (Acuerdo 2025/03/07-02)",
+        "texto": "Se discutió el puntaje para revistas Q1-Q4. El pleno sugirió eliminar el bono de 5 puntos por primer autor del INAOE y buscar otras estrategias para promover el liderazgo institucional.",
+        "tags": [
+          "Tabla de Puntaje",
+          "producción académica",
+          "liderazgo institucional",
+          "revistas"
+        ],
+        "area": "Comisión de la modificación de la Tabla de Puntaje"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Revisión de citas por cuartiles (Acuerdo 2025/02/14-02)",
+        "texto": "Se acordó revisar en la Comisión de modificación de tabla de EDAs la puntuación asignada a las citas del año clasificadas por cuartiles.",
+        "tags": [
+          "citas",
+          "EDAs",
+          "cuartiles",
+          "evaluación"
+        ],
+        "area": "Comisión de modificación de tabla de EDAs"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Máximo de estudiantes por investigador (Acuerdo 2025/02/14-01)",
+        "texto": "Ante dudas sobre los reglamentos del SNP respecto al límite de acompañamientos, se acordó invitar a Francisco Renero a la próxima sesión para una discusión profunda.",
+        "tags": [
+          "SNP",
+          "estudiantes",
+          "posgrado",
+          "Francisco Renero",
+          "reglamento"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "general",
+        "titulo": "Cierre de sesión",
+        "texto": "La reunión finalizó a las 13:30 horas.",
+        "tags": [
+          "cierre",
+          "horario"
+        ],
+        "area": "CPA"
+      }
+    ],
+    "archivo": "CPA-2025-04-10.pdf"
   }
 ]
