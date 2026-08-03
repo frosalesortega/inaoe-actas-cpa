@@ -198,5 +198,76 @@
       }
     ],
     "archivo": "CPA-2025-05-08.pdf"
+  },
+  {
+    "acta": "CPA-10072025",
+    "fecha": "2025-07-10",
+    "fechaLabel": "10 de julio de 2025",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Sugerencias para mejorar el funcionamiento del CPA",
+        "texto": "Se presentaron propuestas para optimizar la dinámica del colegio, incluyendo la realización de una encuesta institucional, la clarificación de atribuciones y la mejora en la comunicación con la Dirección General y las academias. Asimismo, se sugirió implementar horarios definidos, sesiones más dinámicas y el uso de voto electrónico.",
+        "tags": [
+          "CPA",
+          "mejora institucional",
+          "encuesta",
+          "normativa",
+          "voto electrónico"
+        ],
+        "area": "Colegio del Personal Académico"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Valoración del reporte del CEE",
+        "texto": "El CPA concluyó que el reporte del CEE es excesivamente optimista y no refleja los retos reales del Instituto debido a fallas en la comunicación y baja participación. Se propuso establecer un día institucional libre de actividades para facilitar la asistencia de la comunidad a futuras reuniones con el Comité.",
+        "tags": [
+          "CEE",
+          "evaluación institucional",
+          "participación académica",
+          "Junta de Gobierno"
+        ],
+        "area": "Comité de Evaluación Externa"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Ratificación de representante de Astrofísica",
+        "texto": "El pleno ratificó unánimemente a Fabian Rosales-Ortega como nuevo Representante Titular de la Coordinación de Astrofísica. Se informó además sobre la renuncia del representante de Óptica y la decisión de los representantes actuales de Electrónica y Ciencias Computacionales de permanecer en sus cargos.",
+        "tags": [
+          "Fabian Rosales-Ortega",
+          "Astrofísica",
+          "ratificación",
+          "representación"
+        ],
+        "area": "Coordinación de Astrofísica"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Votación para Secretario del CPA",
+        "texto": "Se definió el proceso de elección para el cargo de Secretario, estableciendo una votación electrónica con los candidatos Fabian Rosales-Ortega y Alejandro Diaz Sánchez. La votación se programó para concluir el 11 de julio.",
+        "tags": [
+          "elección",
+          "Secretario",
+          "Fabian Rosales-Ortega",
+          "Alejandro Diaz Sánchez",
+          "voto electrónico"
+        ],
+        "area": "Colegio del Personal Académico"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Solicitud de aclaración sobre nóminas (TESOFE)",
+        "texto": "Ante la inquietud de la coordinación de Electrónica sobre los pagos de nómina por parte de TESOFE, el pleno votó a favor de solicitar una reunión urgente con el Director General para obtener una aclaración formal.",
+        "tags": [
+          "TESOFE",
+          "nómina",
+          "Director General",
+          "Electrónica",
+          "pago"
+        ],
+        "area": "Coordinación de Electrónica"
+      }
+    ],
+    "archivo": "CPA-2025-07-10.pdf"
   }
 ]
