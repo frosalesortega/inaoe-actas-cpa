@@ -450,5 +450,69 @@
       }
     ],
     "archivo": "CPA-2025-09-25.pdf"
+  },
+  {
+    "acta": "CPA-09102025",
+    "fecha": "2025-10-09",
+    "fechaLabel": "9 de octubre de 2025",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Resultados de la Consulta Abierta al CPA",
+        "texto": "Se presentaron los resultados de la consulta realizada en septiembre, destacando temas prioritarios como condiciones laborales, gestión institucional (DAF) y actualización normativa. Se aprobó un plan de acción para abordar asuntos de competencia interna y externa con 24 votos a favor.",
+        "tags": [
+          "consulta",
+          "DAF",
+          "normatividad",
+          "plan de acción",
+          "Junta de Gobierno"
+        ],
+        "area": "Dirección General"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Comité para la actualización del Reglamento del CPA",
+        "texto": "Se conformó el comité de actualización integrado por Roberto Murphy, Divakara Mayya, Ángel Sinue Cruz Felix, Wilfrido Calleja Arriaga, María del Pilar Gómez Gil, Carlos Gerardo Treviño Palacios, Saúl Pomares Hernández y José Ramón Valdés Parra. El comité iniciará reuniones próximamente para presentar propuestas al pleno.",
+        "tags": [
+          "reglamento",
+          "comité",
+          "Roberto Murphy",
+          "Divakara Mayya",
+          "Ángel Sinue Cruz Felix",
+          "Wilfrido Calleja Arriaga",
+          "María del Pilar Gómez Gil",
+          "Carlos Gerardo Treviño Palacios",
+          "Saúl Pomares Hernández",
+          "José Ramón Valdés Parra"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "general",
+        "titulo": "Asuntos Generales",
+        "texto": "Se informó sobre la actualización de políticas de bungalows por parte de la DAF, la falta de presupuesto para psicólogos y profesores de inglés, y la aclaración sobre la participación opcional de investigadores de la Coordinación de Óptica.",
+        "tags": [
+          "DAF",
+          "bungalows",
+          "presupuesto",
+          "Coordinación de Óptica",
+          "idiomas"
+        ],
+        "area": "Dirección de Administración y Finanzas"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Plan de acción para temas prioritarios",
+        "texto": "ACUERDO 1.- CPAEX-09102025: Los representantes del CPA contactarán a investigadores para formular propuestas de acción concreta sobre problemas identificados en la encuesta, las cuales serán discutidas en el pleno y presentadas ante el Consejo Científico y Académico (CCA).",
+        "tags": [
+          "acuerdo",
+          "CCA",
+          "investigadores",
+          "plan de acción"
+        ],
+        "area": "Consejo Científico y Académico"
+      }
+    ],
+    "archivo": "CPA-2025-10-09.pdf"
   }
 ]
