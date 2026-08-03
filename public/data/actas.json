@@ -57,5 +57,42 @@
       }
     ],
     "archivo": "CPA-2025-02-27.pdf"
+  },
+  {
+    "acta": "CPA-13032025",
+    "fecha": "2025-03-13",
+    "fechaLabel": "13 de marzo de 2025",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Proceso de auscultación para la Dirección General del INAOE",
+        "texto": "Se llevó a cabo el proceso de auscultación interna para la titularidad de la Dirección General del INAOE, contando con la participación de cinco aspirantes: Leopoldo Altamirano Robles, Alejandro Díaz Méndez, Daniel Durini Romero, Saul Pomares Hernández y David Sánchez de la Llave.",
+        "tags": [
+          "auscultación",
+          "Dirección General",
+          "INAOE",
+          "Leopoldo Altamirano Robles",
+          "Alejandro Díaz Méndez",
+          "Daniel Durini Romero",
+          "Saul Pomares Hernández",
+          "David Sánchez de la Llave"
+        ],
+        "area": "Colegio del Personal Académico"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Resultados de la votación de auscultación",
+        "texto": "Tras una jornada de votación con 113 participantes (99 presenciales y 14 electrónicos), se contabilizaron los votos bajo un sistema de tres prioridades. Los resultados finales por prioridad 1 fueron: Alejandro Díaz Méndez (30), Daniel Durini Romero (26), Saul Pomares Hernández (21), David Sánchez de la Llave (19) y Leopoldo Altamirano Robles (16).",
+        "tags": [
+          "votación",
+          "resultados",
+          "elección",
+          "auscultación",
+          "conteo de votos"
+        ],
+        "area": "Colegio del Personal Académico"
+      }
+    ],
+    "archivo": "CPA-2025-03-13.pdf"
   }
 ]
