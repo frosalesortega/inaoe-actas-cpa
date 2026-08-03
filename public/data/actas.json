@@ -269,5 +269,117 @@
       }
     ],
     "archivo": "CPA-2025-07-10.pdf"
+  },
+  {
+    "acta": "CPA-28082025",
+    "fecha": "2025-08-28",
+    "fechaLabel": "28 de agosto de 2025",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Ratificación de representantes",
+        "texto": "Se ratificó al Dr. Alfredo Montaña Barbano como representante suplente de Astrofísica. No se ratificó al Dr. Irán Ramos Prieto como representante titular de Óptica, por lo que la coordinación deberá proponer un nuevo candidato o considerar al suplente actual.",
+        "tags": [
+          "Astrofísica",
+          "Óptica",
+          "Alfredo Montaña Barbano",
+          "Irán Ramos Prieto",
+          "Bartolomé Reyes",
+          "representación"
+        ],
+        "area": "Coordinación de Óptica"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Mejoras al funcionamiento del CPA",
+        "texto": "Se discutió la participación del CPA en la Junta de Gobierno para emitir opiniones colegiadas sobre la vida académica y administrativa del instituto, incluyendo una evaluación institucional integral.",
+        "tags": [
+          "Junta de Gobierno",
+          "evaluación institucional",
+          "gestión"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Modificación de Tabla de EDAs",
+        "texto": "Se presentaron recomendaciones para la tabla de EDAs, incluyendo un formato web y ajustes en el puntaje de publicaciones Q1-Q4. Se busca promover el liderazgo institucional en la producción académica.",
+        "tags": [
+          "EDAs",
+          "DIDT",
+          "evaluación académica",
+          "publicaciones"
+        ],
+        "area": "Comisión de Modificación de Tabla de EDAs"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Mecanismo de opinión ante la Junta de Gobierno",
+        "texto": "Se estableció que el CPA puede emitir pronunciamientos formales dirigidos a la Junta de Gobierno, fundamentados en el Estatuto, mediante oficios enviados con al menos 10 días hábiles de anticipación.",
+        "tags": [
+          "Junta de Gobierno",
+          "F. Rosales",
+          "estatutos",
+          "normatividad"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Asuntos generales",
+        "texto": "Se discutió la propuesta de que el CPA participe en seminarios institucionales, el otorgamiento de reconocimientos y la situación laboral de los posdoctorados en el INAOE.",
+        "tags": [
+          "seminarios",
+          "posdoctorados",
+          "DFA",
+          "reconocimientos"
+        ],
+        "area": "DFA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Solicitud de información a DIDT",
+        "texto": "ACUERDO 1.- CPAEX-28082025. Se solicitará a la DIDT una tabla explicativa sobre los cambios en las EDAs para su votación en la próxima reunión.",
+        "tags": [
+          "DIDT",
+          "EDAs",
+          "acuerdo"
+        ],
+        "area": "DIDT"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Consulta abierta al CPA",
+        "texto": "ACUERDO 2.- CPAEX-28082025. Los representantes titulares se comprometen a elaborar una consulta abierta para definir temas prioritarios, dinámica y objetivos del CPA.",
+        "tags": [
+          "consulta",
+          "representantes",
+          "acuerdo"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Borrador de opinión para Junta de Gobierno",
+        "texto": "ACUERDO 3.- CPAEX-28082025. Los representantes presentarán un borrador de opinión sobre la evaluación de la CEE y problemas institucionales para la próxima Junta de Gobierno.",
+        "tags": [
+          "Junta de Gobierno",
+          "CEE",
+          "acuerdo"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Participación en seminarios",
+        "texto": "ACUERDO 4.- CPAEX-28082025. Se consultará la posibilidad de que el CPA participe en la organización o sugerencia de seminarios institucionales.",
+        "tags": [
+          "seminarios",
+          "acuerdo"
+        ],
+        "area": "CPA"
+      }
+    ],
+    "archivo": "CPA-2025-08-28.pdf"
   }
 ]
