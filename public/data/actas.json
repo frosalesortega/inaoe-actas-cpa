@@ -617,5 +617,97 @@
       }
     ],
     "archivo": "CPA-2025-10-23.pdf"
+  },
+  {
+    "acta": "CPA-06112025",
+    "fecha": "2025-11-06",
+    "fechaLabel": "6 de noviembre de 2025",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Pase de lista y ratificación del orden del día",
+        "texto": "Se realizó el registro de asistencia confirmando el quórum legal y se ratificó por unanimidad la agenda propuesta para la reunión extraordinaria.",
+        "tags": [
+          "quórum",
+          "orden del día",
+          "asistencia"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "seguimiento",
+        "titulo": "Versión final de la tabla de EDAs",
+        "texto": "Dando seguimiento al acuerdo CPAEX-25092025, se aprobaron modificaciones sobre acompañamientos, plazos de posgrados y criterios de evaluación. Las propuestas fueron aprobadas por mayoría o unanimidad según el punto específico.",
+        "tags": [
+          "EDAs",
+          "posgrados",
+          "evaluación",
+          "CONACyT",
+          "DIDT"
+        ],
+        "area": "DIDT"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Opinión del CPA a la Junta de Gobierno",
+        "texto": "Se discutieron y aprobaron por mayoría los puntos de la opinión del CPA para la Junta de Gobierno, incluyendo temas de publicaciones open access y criterios de pago de revistas.",
+        "tags": [
+          "Junta de Gobierno",
+          "JdG",
+          "open access",
+          "revistas científicas",
+          "opinión"
+        ],
+        "area": "Junta de Gobierno"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "PEF2026: Ciencia, Humanidades, Tecnología e Innovación",
+        "texto": "Se informó sobre la ampliación presupuestal de 2,500 millones de pesos al Ramo 38. El pleno acordó invitar al Director General para discutir el impacto de este presupuesto en el INAOE.",
+        "tags": [
+          "PEF2026",
+          "presupuesto",
+          "Ramo 38",
+          "Director General"
+        ],
+        "area": "Dirección General"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Aprobación de cambios en la tabla de EDAs",
+        "texto": "ACUERDO 1 CPAEX-06112025: Se aprueban los cambios y modificaciones del comité de revisión de la tabla de EDAs para su implementación en la convocatoria 2026.",
+        "tags": [
+          "ACUERDO 1",
+          "EDAs",
+          "convocatoria 2026",
+          "DIDT"
+        ],
+        "area": "DIDT"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Aprobación de la opinión del CPA a la JdG",
+        "texto": "ACUERDO 2 CPAEX-06112025: Se aprueba en lo general y en lo particular el texto de la opinión del CPA a la Junta de Gobierno.",
+        "tags": [
+          "ACUERDO 2",
+          "Junta de Gobierno",
+          "opinión"
+        ],
+        "area": "Junta de Gobierno"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Invitación al Director General",
+        "texto": "ACUERDO 3 CPAEX-06112025: Se extenderá una invitación al Director General del INAOE para que asista a la próxima reunión ordinaria y comparta el alcance de la ampliación presupuestal al Ramo 38.",
+        "tags": [
+          "ACUERDO 3",
+          "Director General",
+          "presupuesto",
+          "PEF2026"
+        ],
+        "area": "Dirección General"
+      }
+    ],
+    "archivo": "CPA-2025-11-06.pdf"
   }
 ]
