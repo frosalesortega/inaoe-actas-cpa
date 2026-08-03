@@ -161,5 +161,42 @@
       }
     ],
     "archivo": "CPA-2025-04-10.pdf"
+  },
+  {
+    "acta": "CPA-08052025",
+    "fecha": "2025-05-08",
+    "fechaLabel": "08 de mayo de 2025",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Análisis de lineamientos sobre direcciones y co-direcciones",
+        "texto": "El Dr. Renero presentó un análisis sobre los límites de direcciones y co-direcciones de estudiantes de posgrado según el PNPC y el SNP. Se propuso un máximo de 5 estudiantes por posgrado y un límite de 10 estudiantes para investigadores que participan en hasta 2 posgrados.",
+        "tags": [
+          "Dr. Renero",
+          "PNPC",
+          "SNP",
+          "posgrado",
+          "estudiantes",
+          "investigadores",
+          "direcciones"
+        ],
+        "area": "Dirección de Formación Académica"
+      },
+      {
+        "tipo": "seguimiento",
+        "titulo": "Solicitud de aclaración a Secihti",
+        "texto": "Tras la discusión de los asistentes, se concluyó la necesidad de solicitar a la Secihti una aclaración sobre si el límite de acompañamientos de estudiantes es por posgrado. La DFA y la DG realizarán el contacto para gestionar esta aclaración.",
+        "tags": [
+          "Secihti",
+          "DFA",
+          "DG",
+          "aclaración",
+          "posgrado",
+          "seguimiento"
+        ],
+        "area": "Dirección de Formación Académica"
+      }
+    ],
+    "archivo": "CPA-2025-05-08.pdf"
   }
 ]
