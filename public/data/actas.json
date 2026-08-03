@@ -381,5 +381,74 @@
       }
     ],
     "archivo": "CPA-2025-08-28.pdf"
+  },
+  {
+    "acta": "CPA-25092025",
+    "fecha": "2025-09-25",
+    "fechaLabel": "25 de septiembre de 2025",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Ratificación de representante de la Coordinación de Óptica",
+        "texto": "Se discutió la ratificación del Dr. Irán Ramos Prieto como representante de la Academia de Óptica. Tras someter a votación la modalidad de ratificación, se optó por realizarla vía correo electrónico.",
+        "tags": [
+          "Irán Ramos Prieto",
+          "Óptica",
+          "votación",
+          "representante"
+        ],
+        "area": "Coordinación de Óptica"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Modificación de la tabla de EDAs",
+        "texto": "Se presentaron y votaron diversas propuestas de modificación para la evaluación de estímulos, incluyendo cambios en artículos científicos, formación de recursos humanos, acompañamientos y apoyos institucionales. Se determinó que las propuestas aprobadas pasarán a revisión final y las rechazadas serán devueltas al comité.",
+        "tags": [
+          "EDAs",
+          "estímulos",
+          "DIDT",
+          "investigación",
+          "recursos humanos"
+        ],
+        "area": "DIDT"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Ratificación en línea del representante de Óptica",
+        "texto": "ACUERDO 1.- CPAEX-25092025: Se procederá a la ratificación en línea mediante correo electrónico del Dr. Irán Ramos Prieto como representante titular de la Coordinación de Óptica.",
+        "tags": [
+          "acuerdo",
+          "Irán Ramos Prieto",
+          "Óptica",
+          "votación"
+        ],
+        "area": "Coordinación de Óptica"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Posposición de votación final de tabla de EDAs",
+        "texto": "ACUERDO 2.- CPAEX-25092025: Se determina que las propuestas aprobadas de la tabla de EDAs serán definitivas, mientras que las rechazadas regresarán al comité para observaciones. Se pospone la votación total hasta la aprobación de todas las modificaciones.",
+        "tags": [
+          "acuerdo",
+          "EDAs",
+          "DIDT",
+          "evaluación"
+        ],
+        "area": "DIDT"
+      },
+      {
+        "tipo": "seguimiento",
+        "titulo": "Seguimiento de acuerdos previos",
+        "texto": "Se informó sobre el estado de los acuerdos anteriores: la comparativa de EDAs y la consulta abierta fueron presentadas, mientras que la opinión para la Junta de Gobierno sigue pendiente y la consulta sobre seminarios fue resuelta por la DIDT.",
+        "tags": [
+          "seguimiento",
+          "DIDT",
+          "Junta de Gobierno",
+          "seminarios"
+        ],
+        "area": "DIDT"
+      }
+    ],
+    "archivo": "CPA-2025-09-25.pdf"
   }
 ]
