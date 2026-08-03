@@ -626,5 +626,121 @@
       }
     ],
     "archivo": "CPA-2026-02-19.docx"
+  },
+  {
+    "acta": "CPA-19032026",
+    "fecha": "2026-03-19",
+    "fechaLabel": "19 de marzo de 2026",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Pase de lista y ratificación del orden del día",
+        "texto": "Se realizó el registro de asistencia y se ratificó la agenda por unanimidad. La reunión se llevó a cabo a pesar de la falta de quórum legal.",
+        "tags": [
+          "quórum",
+          "orden del día",
+          "asistencia"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "seguimiento",
+        "titulo": "Seguimiento de acuerdos previos",
+        "texto": "Se informó que las solicitudes sobre procedimientos administrativos, mantenimiento, búngalos y estacionamientos siguen en espera de respuesta oficial. Se presentó el borrador del Reglamento del CPA y los resultados de las evaluaciones a las direcciones.",
+        "tags": [
+          "seguimiento",
+          "procedimientos",
+          "mantenimiento",
+          "reglamento",
+          "evaluación"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Resultados de evaluación a direcciones",
+        "texto": "Se presentaron los resultados de las evaluaciones a la DAF, DG, DIDT y DFA. La DAF obtuvo calificaciones deficientes en adquisiciones, mientras que la DIDT tuvo la valoración más favorable.",
+        "tags": [
+          "DAF",
+          "DG",
+          "DIDT",
+          "DFA",
+          "evaluación",
+          "desempeño"
+        ],
+        "area": "Direcciones"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Actualización del Reglamento del CPA",
+        "texto": "Se presentaron las modificaciones al Reglamento Interno, incluyendo lenguaje incluyente, cargos rotativos y nuevas salvaguardas. Se acordó someter la aprobación a votación en línea.",
+        "tags": [
+          "reglamento",
+          "normativa",
+          "votación",
+          "reforma"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "general",
+        "titulo": "Asuntos generales: Vigilancia y edificios",
+        "texto": "Se denunciaron irregularidades en el servicio de vigilancia y se manifestó inconformidad por el renombramiento de edificios sin consulta previa. Se reportó el estado financiero de la cooperación para café.",
+        "tags": [
+          "seguridad",
+          "vigilancia",
+          "infraestructura",
+          "finanzas"
+        ],
+        "area": "CCA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "ACUERDO 1 CPAEX-19032026: Intervención ante el OIC",
+        "texto": "Ante la falta de respuesta a solicitudes formales, se acordó interponer una solicitud ante el Órgano Interno de Control (OIC) si ha transcurrido más de un periodo entre el acuerdo y la reunión del CCA. Aprobado con 14 votos a favor y 1 abstención.",
+        "tags": [
+          "OIC",
+          "transparencia",
+          "acuerdo",
+          "CCA"
+        ],
+        "area": "OIC"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "ACUERDO 2 CPAEX-19032026: Votación del Reglamento",
+        "texto": "Se acordó someter a votación en línea la actualización del Reglamento Interno en lo general. Aprobado con 10 votos a favor en línea y 6 presenciales.",
+        "tags": [
+          "reglamento",
+          "votación",
+          "acuerdo"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "ACUERDO 3 CPAEX-19032026: Sesión extraordinaria",
+        "texto": "Se acordó por unanimidad convocar a una sesión extraordinaria el 26 de marzo para discutir las reservas en lo particular del Reglamento, sujeto a su aprobación en lo general.",
+        "tags": [
+          "sesión extraordinaria",
+          "reglamento",
+          "acuerdo"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "ACUERDO 4 CPAEX-19032026: Denuncias ante el CCA",
+        "texto": "Se acordó por unanimidad presentar ante el CCA las irregularidades en el servicio de vigilancia y la inconformidad por el renombramiento de edificios sin consulta.",
+        "tags": [
+          "CCA",
+          "vigilancia",
+          "edificios",
+          "acuerdo"
+        ],
+        "area": "CCA"
+      }
+    ],
+    "archivo": "CPA-2026-03-19.docx"
   }
 ]
