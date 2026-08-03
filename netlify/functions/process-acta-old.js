@@ -1,5 +1,4 @@
 // Netlify function: receives PDF/DOCX, sends to Gemini API, returns structured JSON
-// Tries multiple Gemini models as fallback if one is overloaded
 const mammoth = require('mammoth');
 
 const PROMPT = `Eres un asistente que estructura actas del Colegio del Personal Académico (CPA) del INAOE en formato JSON.
@@ -30,14 +29,6 @@ Reglas:
 - El campo "area" solo se incluye si el punto está claramente bajo una coordinación o dirección específica
 - Para votaciones, incluir el resultado resumido en el texto
 - Responde SOLO con el JSON válido, sin texto adicional, sin backticks, sin markdown`;
-
-// Models to try in order — if one is overloaded, try the next
-const MODELS = [
-  'gemini-2.5-flash-lite',
-  'gemini-2.0-flash',
-  'gemini-2.0-flash-lite',
-  'gemini-1.5-flash'
-];
 
 exports.handler = async (event) => {
   const headers = {
@@ -75,11 +66,13 @@ exports.handler = async (event) => {
     let geminiParts = [];
 
     if (ext === 'pdf') {
+      // Send PDF directly to Gemini (it can read PDFs natively)
       geminiParts = [
         { text: PROMPT },
         { inline_data: { mime_type: 'application/pdf', data: body.fileData } }
       ];
     } else if (ext === 'docx' || ext === 'doc') {
+      // Extract text from Word with mammoth, then send as text
       const result = await mammoth.extractRawText({ buffer: fileBuffer });
       const docText = result.value;
       if (!docText || docText.trim().length < 50) {
@@ -92,63 +85,45 @@ exports.handler = async (event) => {
       return { statusCode: 400, headers, body: JSON.stringify({ error: `Formato "${ext}" no soportado. Usa PDF o Word (.docx).` }) };
     }
 
-    // Try each model until one works
-    let lastError = '';
+    // Call Gemini API — using flash-lite for speed (26s Netlify timeout)
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${GEMINI_API_KEY}`;
+
+    const geminiResp = await fetch(geminiUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ parts: geminiParts }],
+        generationConfig: {
+          temperature: 0.1,
+          maxOutputTokens: 8192,
+          thinkingConfig: { thinkingBudget: 0 }
+        }
+      })
+    });
+
+    if (!geminiResp.ok) {
+      const errData = await geminiResp.json().catch(() => ({}));
+      console.error('Gemini API error:', JSON.stringify(errData));
+      const errMsg = errData?.error?.message || `Error ${geminiResp.status}`;
+      return { statusCode: 502, headers, body: JSON.stringify({ error: `Error de Gemini API: ${errMsg}` }) };
+    }
+
+    const geminiData = await geminiResp.json();
+
+    // Extract text from response
     let responseText = '';
-
-    for (const model of MODELS) {
-      try {
-        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`;
-
-        const geminiResp = await fetch(geminiUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents: [{ parts: geminiParts }],
-            generationConfig: {
-              temperature: 0.1,
-              maxOutputTokens: 8192,
-              thinkingConfig: { thinkingBudget: 0 }
-            }
-          })
-        });
-
-        if (!geminiResp.ok) {
-          const errData = await geminiResp.json().catch(() => ({}));
-          lastError = errData?.error?.message || `Error ${geminiResp.status}`;
-          console.log(`Model ${model} failed: ${lastError}`);
-
-          if (geminiResp.status === 429 || geminiResp.status === 503 || lastError.includes('high demand') || lastError.includes('overloaded')) {
-            continue;
-          }
-          return { statusCode: 502, headers, body: JSON.stringify({ error: `Error de Gemini API: ${lastError}` }) };
-        }
-
-        const geminiData = await geminiResp.json();
-
-        if (geminiData.candidates && geminiData.candidates[0]?.content?.parts) {
-          responseText = geminiData.candidates[0].content.parts
-            .filter(p => p.text)
-            .map(p => p.text)
-            .join('');
-        }
-
-        if (responseText) {
-          console.log(`Success with model: ${model}`);
-          break;
-        }
-      } catch (fetchErr) {
-        lastError = fetchErr.message;
-        console.log(`Model ${model} fetch error: ${lastError}`);
-        continue;
-      }
+    if (geminiData.candidates && geminiData.candidates[0]?.content?.parts) {
+      responseText = geminiData.candidates[0].content.parts
+        .filter(p => p.text)
+        .map(p => p.text)
+        .join('');
     }
 
     if (!responseText) {
-      return { statusCode: 502, headers, body: JSON.stringify({ error: `Todos los modelos de Gemini están saturados. Último error: ${lastError}. Intenta en unos minutos o usa la pestaña "Agregar manualmente".` }) };
+      return { statusCode: 502, headers, body: JSON.stringify({ error: 'Gemini no devolvió contenido. Intenta de nuevo.' }) };
     }
 
-    // Parse JSON from response
+    // Parse JSON from response (handle possible markdown fences)
     let clean = responseText.trim();
     if (clean.startsWith('```')) clean = clean.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
 
@@ -157,11 +132,12 @@ exports.handler = async (event) => {
       parsed = JSON.parse(clean);
     } catch (e) {
       return { statusCode: 422, headers, body: JSON.stringify({
-        error: 'Gemini devolvió una respuesta que no es JSON válido. Intenta de nuevo o usa el modo manual.',
+        error: 'Gemini devolvió una respuesta que no es JSON válido. Puedes intentar de nuevo o usar el modo manual.',
         rawResponse: clean.substring(0, 2000)
       })};
     }
 
+    // Basic validation
     if (!parsed.acta || !parsed.fecha || !parsed.fechaLabel || !Array.isArray(parsed.items)) {
       return { statusCode: 422, headers, body: JSON.stringify({
         error: 'El JSON generado no tiene la estructura correcta. Intenta de nuevo o usa el modo manual.',
