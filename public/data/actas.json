@@ -1,1 +1,61 @@
-[]
+[
+  {
+    "acta": "CPA-27022025",
+    "fecha": "2025-02-27",
+    "fechaLabel": "27 de febrero de 2025",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Participación en el Centro Nacional de Diseño de Semiconductores",
+        "texto": "El Dr. David Sanchez de la Llave informó sobre la participación del INAOE en el proyecto y aclaró dudas sobre la comisión de personal. Se garantizó que la contribución al proyecto será considerada en las evaluaciones del SNII y EDAs.",
+        "tags": [
+          "David Sanchez de la Llave",
+          "Semiconductores",
+          "CICI",
+          "SNII",
+          "EDA",
+          "Dirección General"
+        ],
+        "area": "Dirección General"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Nueva Especialidad en Tecnologías de Semiconductores",
+        "texto": "Alfredo Morales presentó el plan para una nueva especialidad de un año en modalidad híbrida. El Dr. Francisco Renero invitó a los investigadores a explorar la creación de nuevos especialistas y diplomados en otras áreas.",
+        "tags": [
+          "Alfredo Morales",
+          "Francisco Renero",
+          "Electrónica",
+          "Especialidad",
+          "Docencia"
+        ],
+        "area": "Coordinación de Electrónica"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Convocatoria para titular de la Dirección General",
+        "texto": "Se presentó el calendario de auscultación y se discutieron los pormenores de la convocatoria. Tras una votación, se aprobó por mayoría otorgar el derecho de voto a los tecnólogos en el proceso.",
+        "tags": [
+          "CPA",
+          "Dirección General",
+          "Auscultación",
+          "Votación",
+          "Tecnólogos"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Ratificación del calendario de reuniones del CPA",
+        "texto": "Se presentó y ratificó el calendario de sesiones del CPA para el resto del año, programadas para el tercer o cuarto jueves de cada mes.",
+        "tags": [
+          "CPA",
+          "Calendario",
+          "Reuniones"
+        ],
+        "area": "CPA"
+      }
+    ],
+    "archivo": "CPA-2025-02-27.pdf"
+  }
+]
