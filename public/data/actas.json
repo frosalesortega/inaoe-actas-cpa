@@ -514,5 +514,108 @@
       }
     ],
     "archivo": "CPA-2025-10-09.pdf"
+  },
+  {
+    "acta": "CPA-23102025",
+    "fecha": "2025-10-23",
+    "fechaLabel": "23 de octubre de 2025",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Pase de lista y ratificación de orden del día",
+        "texto": "Se realizó el registro de asistencia y se ratificó por unanimidad la agenda propuesta para la reunión.",
+        "tags": [
+          "quórum",
+          "asistencia",
+          "orden del día"
+        ],
+        "area": null
+      },
+      {
+        "tipo": "seguimiento",
+        "titulo": "Seguimiento de acuerdos previos",
+        "texto": "Se dio seguimiento a los acuerdos CPAEX-28082025 (borrador de opinión para Junta de Gobierno), CPAEX-25092025 (EDAs) y CPAEX-09102025 (Temas Prioritarios, Reglamento de Bungalow y Comité de actualización del Reglamento del CPA).",
+        "tags": [
+          "Junta de Gobierno",
+          "EDAs",
+          "Bungalow",
+          "Reglamento CPA"
+        ],
+        "area": null
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Ratificación de representantes de la Coordinación de Óptica",
+        "texto": "Se ratificó al Dr. Bartolomé Reyes Ramírez como representante titular (34 votos a favor) y al Dr. Ángel Sinué Cruz Félix como representante suplente (35 votos a favor).",
+        "tags": [
+          "Bartolomé Reyes Ramírez",
+          "Ángel Sinué Cruz Félix",
+          "Óptica",
+          "votación"
+        ],
+        "area": "Coordinación de Óptica"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Ratificación de representantes ante la CDI",
+        "texto": "Se ratificó a la Dra. Mónica Rodríguez Guillén (Astrofísica) y al Dr. Aurelio López López (Ciencias Computacionales) para un segundo periodo 2026-2027. Queda pendiente la ratificación del representante de Óptica.",
+        "tags": [
+          "Mónica Rodríguez Guillén",
+          "Aurelio López López",
+          "CDI",
+          "Astrofísica",
+          "Ciencias Computacionales"
+        ],
+        "area": null
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Propuestas de Temas Prioritarios",
+        "texto": "Se presentaron propuestas divididas en cuatro ejes: condiciones laborales, gestión institucional, normatividad y representatividad. Se sugirió formar grupos de trabajo para elaborar propuestas concretas.",
+        "tags": [
+          "temas prioritarios",
+          "condiciones laborales",
+          "gestión"
+        ],
+        "area": null
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Borrador de opinión para la Junta de Gobierno",
+        "texto": "Se presentó el borrador de opinión del CPA. Se otorgó un plazo de 24 horas para comentarios de la comunidad y se sugirió incluir la problemática de los investigadores posdoctorales.",
+        "tags": [
+          "Junta de Gobierno",
+          "investigadores posdoctorales",
+          "opinión CPA"
+        ],
+        "area": null
+      },
+      {
+        "tipo": "general",
+        "titulo": "Asuntos Generales",
+        "texto": "Se discutieron deficiencias en procesos de evaluación de la DIDT y posgrados del SNP, retrasos en pagos, y se presentaron propuestas como un semáforo de compras y una plataforma de gestión de bungalows.",
+        "tags": [
+          "DIDT",
+          "DFA",
+          "SNP",
+          "evaluación",
+          "pagos",
+          "bungalows"
+        ],
+        "area": null
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Solicitud de guía de procedimientos",
+        "texto": "ACUERDO 1 CPAEX-23102025: Se acordó por unanimidad solicitar a la Dirección de Administración y Finanzas la elaboración de una guía de procedimientos que incluya responsables y plazos.",
+        "tags": [
+          "Dirección de Administración y Finanzas",
+          "procedimientos",
+          "acuerdo"
+        ],
+        "area": "Dirección de Administración y Finanzas"
+      }
+    ],
+    "archivo": "CPA-2025-10-23.pdf"
   }
 ]
