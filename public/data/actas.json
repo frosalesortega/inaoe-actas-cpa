@@ -1168,5 +1168,133 @@
       }
     ],
     "archivo": "CPA-2026-04-23.pdf"
+  },
+  {
+    "acta": "CPA-21052026",
+    "fecha": "2026-05-21",
+    "fechaLabel": "21 de mayo de 2026",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Ratificación del orden del día",
+        "texto": "Se ratificó por unanimidad la agenda propuesta para la reunión ordinaria.",
+        "tags": [
+          "orden del día",
+          "votación"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "seguimiento",
+        "titulo": "Seguimiento de acuerdos previos",
+        "texto": "Se informó sobre la entrega de evaluaciones al CEE y se revisaron solicitudes pendientes a la DG, DAF y DIDT sobre procedimientos administrativos, presupuesto, mantenimiento y acceso a instalaciones.",
+        "tags": [
+          "CEE",
+          "DG",
+          "DAF",
+          "DIDT",
+          "evaluaciones",
+          "presupuesto",
+          "mantenimiento"
+        ],
+        "area": "Dirección General"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Retroalimentación reunión CEE",
+        "texto": "Se compartió la retroalimentación del Comité Externo de Evaluación, destacando la importancia de continuar con los ejercicios de evaluación para mejorar los procesos internos de los CPIs.",
+        "tags": [
+          "CEE",
+          "evaluación",
+          "CPIs"
+        ],
+        "area": "Comité Externo de Evaluación"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Carta de Academias CPIs",
+        "texto": "Se informó sobre la participación del INAOE en la carta dirigida a la Dra. Rosaura Ruiz (SECIHTI) para visibilizar problemáticas estructurales de los CPIs, la cual ya fue entregada.",
+        "tags": [
+          "Academias",
+          "CPIs",
+          "SECIHTI",
+          "Rosaura Ruiz"
+        ],
+        "area": "Academias"
+      },
+      {
+        "tipo": "general",
+        "titulo": "Cursos de capacitación obligatorios",
+        "texto": "Se discutió la obligatoriedad de cursos de ética y prevención del acoso, expresando preocupación por la falta de claridad normativa y la necesidad de transparencia en el uso de recursos.",
+        "tags": [
+          "capacitación",
+          "ética",
+          "acoso",
+          "recursos"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "general",
+        "titulo": "Tendedero Edificio 1",
+        "texto": "Se discutió la permanencia del tendedero de denuncias en el Edificio 1 y la necesidad de fortalecer los protocolos institucionales de atención y acompañamiento a víctimas.",
+        "tags": [
+          "tendedero",
+          "denuncias",
+          "acoso",
+          "protocolos"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Solicitud de información sobre cursos de capacitación",
+        "texto": "ACUERDO 1.- CPAEX-21052026: Se acordó solicitar al CCA y autoridades información clara sobre la obligatoriedad, alcance y fundamento normativo de los cursos de capacitación.",
+        "tags": [
+          "acuerdo",
+          "capacitación",
+          "CCA",
+          "normativa"
+        ],
+        "area": "CCA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Transparencia en recursos de capacitación",
+        "texto": "ACUERDO 2.- CPAEX-21052026: Se acordó solicitar transparencia en el uso de recursos destinados a programas de capacitación institucional.",
+        "tags": [
+          "acuerdo",
+          "transparencia",
+          "recursos"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Revisión de normativa contra acoso",
+        "texto": "ACUERDO 3.- CPAEX-21052026: Se acordó exigir al CCA la revisión y actualización de la normativa sobre prevención y atención de casos de acoso y hostigamiento.",
+        "tags": [
+          "acuerdo",
+          "acoso",
+          "hostigamiento",
+          "CCA",
+          "normativa"
+        ],
+        "area": "CCA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Carta sobre protocolos de atención a casos de acoso",
+        "texto": "ACUERDO 4.- CPAEX-21052026: Se acordó redactar una carta a la Dirección General solicitando la implementación y difusión de protocolos claros con plazos definidos para la atención de casos de acoso.",
+        "tags": [
+          "acuerdo",
+          "protocolos",
+          "acoso",
+          "Dirección General"
+        ],
+        "area": "Dirección General"
+      }
+    ],
+    "archivo": "CPA-2026-05-21.pdf"
   }
 ]
