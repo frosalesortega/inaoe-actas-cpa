@@ -1035,5 +1035,52 @@
       }
     ],
     "archivo": "CPA-2026-03-19.pdf"
+  },
+  {
+    "acta": "CPA-26032026",
+    "fecha": "2026-03-26",
+    "fechaLabel": "26 de marzo de 2026",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Aprobación del nuevo Reglamento del CPA",
+        "texto": "Se discutieron diversas reservas presentadas por miembros de la comunidad sobre el nuevo reglamento, incluyendo definiciones de academia, mecanismos de elección y quórum. Tras analizar las propuestas, el pleno aprobó el nuevo Reglamento del CPA en lo general y en lo particular.",
+        "tags": [
+          "Reglamento",
+          "CPA",
+          "Enrique Sucar",
+          "Eduardo Tepichin",
+          "votación",
+          "normativa"
+        ],
+        "area": "Colegio del Personal Académico"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Firma del Reglamento del CPA",
+        "texto": "ACUERDO 1 CPAEX-26032026: Los integrantes de la comisión de actualización del Reglamento del CPA firmarán la versión corregida del documento para su posterior circulación entre los miembros del colegio.",
+        "tags": [
+          "ACUERDO 1",
+          "CPAEX-26032026",
+          "Reglamento",
+          "Comisión de actualización",
+          "firma"
+        ],
+        "area": "Comité de Revisión del Reglamento CPA"
+      },
+      {
+        "tipo": "general",
+        "titulo": "Transitorios del nuevo Reglamento",
+        "texto": "Se estableció que el reglamento entra en vigor el 26 de marzo de 2026. Se definió que el cargo del actual Secretario del CPA concluirá el 11 de julio de 2026.",
+        "tags": [
+          "Transitorios",
+          "Reglamento",
+          "Secretaría del CPA",
+          "vigencia"
+        ],
+        "area": "Colegio del Personal Académico"
+      }
+    ],
+    "archivo": "CPA-2026-03-26.pdf"
   }
 ]
