@@ -1082,5 +1082,91 @@
       }
     ],
     "archivo": "CPA-2026-03-26.pdf"
+  },
+  {
+    "acta": "CPA-23042026",
+    "fecha": "2026-04-23",
+    "fechaLabel": "23 de abril de 2026",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Pase de lista y ratificación del orden del día",
+        "texto": "Se realizó el registro de asistencia y se ratificó por unanimidad la agenda propuesta para la reunión.",
+        "tags": [
+          "quórum",
+          "asistencia",
+          "orden del día"
+        ],
+        "area": null
+      },
+      {
+        "tipo": "seguimiento",
+        "titulo": "Seguimiento de acuerdos previos",
+        "texto": "Se informó sobre el avance del nuevo reglamento del CPA y temas presentados ante el CCA sobre vigilancia y edificios. Se mantienen pendientes solicitudes a la DG, DAF y DIDT sobre procedimientos, mantenimiento y políticas de uso de instalaciones.",
+        "tags": [
+          "reglamento",
+          "CCA",
+          "vigilancia",
+          "mantenimiento",
+          "DAF",
+          "DIDT"
+        ],
+        "area": "Dirección General"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Incidencias en servicios de cómputo",
+        "texto": "Se expusieron fallas críticas en el centro de datos, incluyendo problemas eléctricos, inundaciones y falta de redundancia. Se solicitó a las autoridades gestionar acciones de mitigación ante el riesgo de pérdida de información.",
+        "tags": [
+          "cómputo",
+          "infraestructura",
+          "Miguel Martínez",
+          "Agustín Morales",
+          "Claudia Feregrino",
+          "Petra Mares",
+          "Salomón Tecpanecatl"
+        ],
+        "area": "Dirección de Investigación y Desarrollo Tecnológico"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Autonomía de los CPIs",
+        "texto": "Se informó sobre la conformación de un grupo interinstitucional para promover un nuevo marco legal que otorgue mayor autonomía administrativa a los Centros Públicos de Investigación.",
+        "tags": [
+          "autonomía",
+          "CPIs",
+          "SECIHTI",
+          "CICESE",
+          "ECOSUR",
+          "CIESAS"
+        ],
+        "area": null
+      },
+      {
+        "tipo": "general",
+        "titulo": "Asuntos Generales",
+        "texto": "Se discutieron cambios en la convocatoria SNII, proponiendo esquemas para acreditar docencia mediante estudiantes de licenciatura. Asimismo, se presentó el informe financiero de la cooperación para café y galletas.",
+        "tags": [
+          "SNII",
+          "docencia",
+          "finanzas",
+          "estudiantes"
+        ],
+        "area": null
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Acuerdo CPAEX-23042026",
+        "texto": "Se acordó discutir en el CCA esquemas institucionales para que investigadores puedan acreditar productos de docencia a nivel licenciatura, cumpliendo con los criterios del SNII.",
+        "tags": [
+          "acuerdo",
+          "SNII",
+          "docencia",
+          "CCA"
+        ],
+        "area": "Consejo Consultivo Académico"
+      }
+    ],
+    "archivo": "CPA-2026-04-23.pdf"
   }
 ]
