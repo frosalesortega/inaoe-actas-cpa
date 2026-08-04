@@ -709,5 +709,130 @@
       }
     ],
     "archivo": "CPA-2025-11-06.pdf"
+  },
+  {
+    "acta": "CPA-29012026",
+    "fecha": "2026-01-29",
+    "fechaLabel": "29 de enero de 2026",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Seguimiento de acuerdos previos",
+        "texto": "Se revisó el avance en la actualización del reglamento del CPA y diversas solicitudes pendientes ante la DAF sobre procedimientos administrativos, presupuestos y políticas de uso de bungalows.",
+        "tags": [
+          "reglamento",
+          "DAF",
+          "presupuesto",
+          "bungalows",
+          "seguimiento"
+        ],
+        "area": "DAF"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Seguimiento de solicitudes a la DAF y DIDT",
+        "texto": "Se informó sobre el cierre fiscal 2026, medidas de austeridad, restricciones de acceso a estacionamientos en fines de semana y la necesidad de mantenimiento en salones de clase.",
+        "tags": [
+          "cierre fiscal",
+          "austeridad",
+          "estacionamientos",
+          "mantenimiento",
+          "DAF",
+          "DIDT"
+        ],
+        "area": "DAF"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Evaluación a la Administración",
+        "texto": "Se discutió la implementación de un mecanismo de evaluación de la administración por parte del personal técnico-académico, similar a los criterios de los EDAs.",
+        "tags": [
+          "evaluación",
+          "administración",
+          "personal técnico-académico",
+          "EDAs"
+        ],
+        "area": "Junta de Gobierno"
+      },
+      {
+        "tipo": "general",
+        "titulo": "Asuntos Generales",
+        "texto": "Se solicitó a la DAF mejorar la comunicación sobre procesos de pago y se presentó el informe financiero de la cooperación para café y galletas.",
+        "tags": [
+          "pagos",
+          "finanzas",
+          "cafetería",
+          "DAF"
+        ],
+        "area": "DAF"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "ACUERDO 1 CPAEX-29012026: Acceso a estacionamientos y bungalows",
+        "texto": "Se acordó consultar en la próxima reunión del CCA el proceso de acceso a estacionamientos en fines de semana y definir criterios para el uso de bungalows.",
+        "tags": [
+          "estacionamientos",
+          "bungalows",
+          "CCA"
+        ],
+        "area": "CCA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "ACUERDO 2 CPAEX-29012026: Labores de fumigación",
+        "texto": "Se acordó solicitar que las labores de fumigación se realicen en fines de semana y se informe a la comunidad con anticipación.",
+        "tags": [
+          "fumigación",
+          "mantenimiento"
+        ],
+        "area": "DAF"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "ACUERDO 3 CPAEX-29012026: Guía de procedimientos administrativos",
+        "texto": "Se acordó solicitar formalmente a la DG y a la DAF la elaboración y entrega de una guía de procedimientos administrativos y de compras.",
+        "tags": [
+          "procedimientos",
+          "compras",
+          "DG",
+          "DAF"
+        ],
+        "area": "DAF"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "ACUERDO 4 CPAEX-29012026: Mantenimiento de salones",
+        "texto": "Se acordó solicitar el mantenimiento general de salones, incluyendo sustitución de proyectores y mejoras en infraestructura, con un calendario de atención transparente.",
+        "tags": [
+          "mantenimiento",
+          "infraestructura",
+          "salones"
+        ],
+        "area": "DAF"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "ACUERDO 5 CPAEX-29012026: Formulario de mantenimiento en línea",
+        "texto": "Se decidió implementar un formulario público en línea para reportar problemas de mantenimiento, con seguimiento periódico ante el CCA.",
+        "tags": [
+          "mantenimiento",
+          "formulario",
+          "CCA"
+        ],
+        "area": "CCA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "ACUERDO 6 y 7 CPAEX-29012026: Evaluación de la Administración",
+        "texto": "Se acordó presentar un formato de evaluación de la administración para su aprobación y posterior aplicación semestral en febrero y agosto.",
+        "tags": [
+          "evaluación",
+          "administración",
+          "semestral"
+        ],
+        "area": "CPA"
+      }
+    ],
+    "archivo": "CPA-2026-01-29.pdf"
   }
 ]
