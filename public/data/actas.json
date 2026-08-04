@@ -1296,5 +1296,99 @@
       }
     ],
     "archivo": "CPA-2026-05-21.pdf"
+  },
+  {
+    "acta": "CPA-25062026",
+    "fecha": "2026-06-25",
+    "fechaLabel": "25 de junio de 2026",
+    "items": [
+      {
+        "tipo": "seguimiento",
+        "titulo": "Seguimiento de acuerdos previos",
+        "texto": "Se informó sobre el estado de consultas a la DG respecto a cursos de capacitación, protocolos de acoso y hostigamiento sexual, y la falta de respuesta a solicitudes de información, lo cual motivó la intervención del Órgano Interno de Control (OIC). Se listaron diversas respuestas pendientes de las autoridades sobre procedimientos administrativos, presupuestos y mantenimiento.",
+        "tags": [
+          "DG",
+          "DAF",
+          "OIC",
+          "acoso",
+          "capacitación",
+          "transparencia"
+        ],
+        "area": "Dirección General"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Reporte de la Junta de Gobierno",
+        "texto": "Se informó sobre la reciente reunión de la Junta de Gobierno y los nombramientos de Salomón Tecpanecatl en Recursos Materiales y Claudia Sánchez Álvarez en Recursos Humanos.",
+        "tags": [
+          "Junta de Gobierno",
+          "Salomón Tecpanecatl",
+          "Claudia Sánchez Álvarez",
+          "Recursos Humanos"
+        ],
+        "area": "Junta de Gobierno"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Criterios de subutilización y reasignación de laboratorios",
+        "texto": "Se discutió la necesidad de establecer criterios normativos y colegiados para la gestión de espacios académicos, buscando evitar la asignación unilateral y promover la colaboración entre grupos de investigación.",
+        "tags": [
+          "laboratorios",
+          "infraestructura",
+          "espacios académicos",
+          "investigación"
+        ],
+        "area": "Coordinaciones Académicas"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Propuesta de creación de la Agencia Nacional de CPIs",
+        "texto": "Se presentó una iniciativa para crear una Agencia Nacional de Centros Públicos de Investigación (CPIs) con el fin de mejorar la gobernanza y reducir la carga administrativa actual.",
+        "tags": [
+          "CPIs",
+          "gobernanza",
+          "SECIHTI",
+          "política científica"
+        ],
+        "area": "SECIHTI"
+      },
+      {
+        "tipo": "general",
+        "titulo": "Asuntos generales: Elección de Secretario y seguridad estudiantil",
+        "texto": "Se anunció la convocatoria para la elección del nuevo Secretario del CPA. Asimismo, se discutieron medidas de seguridad ante reportes de extorsión a estudiantes en la búsqueda de alojamiento.",
+        "tags": [
+          "elección",
+          "seguridad",
+          "estudiantes",
+          "alojamiento"
+        ],
+        "area": "CPA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "ACUERDO 1.- Criterios para laboratorios",
+        "texto": "Se acordó por unanimidad presentar ante el CCA una propuesta integral para establecer criterios normativos y colegiados en la asignación y reasignación de laboratorios, priorizando la investigación y la preservación del equipo.",
+        "tags": [
+          "acuerdo",
+          "laboratorios",
+          "CCA",
+          "normatividad"
+        ],
+        "area": "CCA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "ACUERDO 2.- Seguridad y alojamiento estudiantil",
+        "texto": "Se acordó solicitar a la Dirección General el fortalecimiento de la vigilancia policial y promover la difusión de medidas preventivas para estudiantes ante riesgos de extorsión en la búsqueda de alojamiento.",
+        "tags": [
+          "acuerdo",
+          "seguridad",
+          "estudiantes",
+          "extorsión"
+        ],
+        "area": "Dirección General"
+      }
+    ],
+    "archivo": "CPA-2026-06-25.pdf"
   }
 ]
