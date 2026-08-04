@@ -834,5 +834,112 @@
       }
     ],
     "archivo": "CPA-2026-01-29.pdf"
+  },
+  {
+    "acta": "CPA-19022026",
+    "fecha": "2026-02-19",
+    "fechaLabel": "19 de febrero de 2026",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Pase de lista y ratificación del orden del día",
+        "texto": "Se realizó el registro de asistencia y se ratificó por unanimidad la agenda propuesta para la reunión extraordinaria.",
+        "tags": [
+          "quórum",
+          "asistencia",
+          "orden del día"
+        ],
+        "area": null
+      },
+      {
+        "tipo": "seguimiento",
+        "titulo": "Seguimiento de acuerdos previos",
+        "texto": "Se revisaron diversos puntos pendientes, incluyendo procedimientos administrativos, mantenimiento de instalaciones, reglamento de búngalos, acceso a estacionamientos, fumigación y avances en la actualización del reglamento del CPA.",
+        "tags": [
+          "mantenimiento",
+          "reglamento",
+          "estacionamiento",
+          "fumigación",
+          "procedimientos"
+        ],
+        "area": "DAF"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Aprobación del formato de evaluación a la DAF",
+        "texto": "Se discutió el formato de evaluación a la DAF y se acordó incluir cuatro preguntas propuestas por Joel Molina. Asimismo, se definió realizar una evaluación anual a la DG, DIDT y DFA utilizando el formato del Comité Evaluador Externo.",
+        "tags": [
+          "evaluación",
+          "DAF",
+          "DG",
+          "DIDT",
+          "Joel Molina",
+          "CEE"
+        ],
+        "area": "DAF"
+      },
+      {
+        "tipo": "general",
+        "titulo": "Asuntos Generales",
+        "texto": "Se planteó la necesidad de aclarar quién debe estar a cargo de la DFA y se presentó el informe financiero de la cooperación para café y galletas, con un saldo final de $322.",
+        "tags": [
+          "DFA",
+          "finanzas",
+          "cooperación"
+        ],
+        "area": "DFA"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Consulta sobre estacionamientos",
+        "texto": "ACUERDO 1 CPAEX-19022026: Se acordó realizar una consulta formal por escrito respecto a las políticas y horarios de ingreso a los estacionamientos durante los fines de semana.",
+        "tags": [
+          "estacionamiento",
+          "horarios",
+          "acuerdo"
+        ],
+        "area": null
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Inclusión de preguntas en evaluación",
+        "texto": "ACUERDO 2 CPAEX-19022026: Se acordó incorporar las cuatro preguntas propuestas por Joel Molina en el cuestionario de evaluación de la DAF.",
+        "tags": [
+          "evaluación",
+          "DAF",
+          "Joel Molina",
+          "acuerdo"
+        ],
+        "area": "DAF"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Difusión del formato de evaluación",
+        "texto": "ACUERDO 3 CPAEX-19022026: Se acordó enviar el formato de evaluación a la DAF por correo electrónico y solicitar a los representantes de cada coordinación que promuevan su difusión y participación.",
+        "tags": [
+          "evaluación",
+          "DAF",
+          "difusión",
+          "coordinaciones",
+          "acuerdo"
+        ],
+        "area": "DAF"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Implementación de evaluación anual a directivos",
+        "texto": "ACUERDO 4 CPAEX-19022026: Se acordó implementar una evaluación anual a la DG, DIDT y DFA, utilizando como base el formato y las preguntas empleadas por el Comité Evaluador Externo.",
+        "tags": [
+          "evaluación",
+          "DG",
+          "DIDT",
+          "DFA",
+          "CEE",
+          "acuerdo"
+        ],
+        "area": "Dirección General"
+      }
+    ],
+    "archivo": "CPA-2026-02-19.pdf"
   }
 ]
