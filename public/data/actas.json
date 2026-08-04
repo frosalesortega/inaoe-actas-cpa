@@ -941,5 +941,99 @@
       }
     ],
     "archivo": "CPA-2026-02-19.pdf"
+  },
+  {
+    "acta": "CPA-19032026",
+    "fecha": "2026-03-19",
+    "fechaLabel": "19 de marzo de 2026",
+    "items": [
+      {
+        "tipo": "tema",
+        "titulo": "Resultados de la evaluación semestral DAF y anual DG, DIDT, DFA",
+        "texto": "Se presentaron los resultados de las evaluaciones donde la DAF obtuvo calificaciones deficientes en procesos de adquisiciones y la DIDT mostró resultados favorables. La DG presentó resultados heterogéneos con áreas críticas en apoyo a investigadores, los cuales serán entregados a los responsables y al Comité Evaluador Externo.",
+        "tags": [
+          "evaluación",
+          "DAF",
+          "DG",
+          "DIDT",
+          "DFA",
+          "desempeño",
+          "CEE"
+        ],
+        "area": "Dirección General"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Actualización del Reglamento del CPA",
+        "texto": "Se discutieron los cambios propuestos al Reglamento Interno, incluyendo lenguaje incluyente, cargos rotativos, limitación de reelección y nuevas salvaguardas administrativas. Se acordó someter la aprobación en lo general a votación en línea.",
+        "tags": [
+          "reglamento",
+          "normativa",
+          "reforma",
+          "votación"
+        ],
+        "area": "Colegio del Personal Académico"
+      },
+      {
+        "tipo": "general",
+        "titulo": "Asuntos Generales: Vigilancia y Renombramiento de Edificios",
+        "texto": "Se discutieron irregularidades en el servicio de vigilancia nocturna y la inconformidad por el renombramiento de edificios sin consulta previa. Se acordó trasladar ambos puntos al CCA para su atención administrativa.",
+        "tags": [
+          "vigilancia",
+          "seguridad",
+          "infraestructura",
+          "CCA",
+          "irregularidades"
+        ],
+        "area": "Consejo Consultivo Académico"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "CPAEX-19032026: Solicitud de información al OIC",
+        "texto": "Ante la falta de respuesta a solicitudes previas, se acordó interponer una solicitud ante el Órgano Interno de Control (OIC) tras transcurrir el periodo establecido. Aprobado con 14 votos a favor y 1 abstención.",
+        "tags": [
+          "OIC",
+          "transparencia",
+          "gestión",
+          "acuerdo"
+        ],
+        "area": "Órgano Interno de Control"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "CPAEX-19032026: Votación del Reglamento",
+        "texto": "Se acordó someter a votación en línea la actualización del Reglamento Interno en lo general. La votación en la sesión presencial resultó en 10 votos a favor y 6 votos a favor en la discusión general.",
+        "tags": [
+          "reglamento",
+          "votación",
+          "acuerdo"
+        ],
+        "area": "Colegio del Personal Académico"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "CPAEX-19032026: Sesión extraordinaria para el Reglamento",
+        "texto": "Se acordó por unanimidad convocar a una sesión extraordinaria el 26 de marzo de 2026 para discutir las reservas en lo particular, una vez aprobado el reglamento en lo general.",
+        "tags": [
+          "sesión extraordinaria",
+          "reglamento",
+          "acuerdo"
+        ],
+        "area": "Colegio del Personal Académico"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "CPAEX-19032026: Presentación de temas al CCA",
+        "texto": "Se acordó por unanimidad presentar ante el CCA las irregularidades en el servicio de vigilancia y la inconformidad por el renombramiento de edificios. Se busca que las instancias administrativas competentes atiendan estos temas.",
+        "tags": [
+          "CCA",
+          "vigilancia",
+          "infraestructura",
+          "acuerdo"
+        ],
+        "area": "Consejo Consultivo Académico"
+      }
+    ],
+    "archivo": "CPA-2026-03-19.pdf"
   }
 ]
