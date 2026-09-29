@@ -1390,5 +1390,122 @@
       }
     ],
     "archivo": "CPA-2026-06-25.pdf"
+  },
+  {
+    "acta": "INAOE/CCA/2026-21-08/006/2026",
+    "fecha": "2026-08-21",
+    "fechaLabel": "21 de agosto de 2026",
+    "items": [
+      {
+        "tipo": "general",
+        "titulo": "Resultados de convocatorias de proyectos 2026",
+        "texto": "Se informaron los resultados de las convocatorias de proyectos 2026, reportando un total de 42 propuestas presentadas. De estas, seis fueron aprobadas, cuatro están pendientes de resultados y el resto no fueron aprobadas.",
+        "tags": [
+          "proyectos",
+          "convocatorias",
+          "investigación",
+          "desarrollo tecnológico"
+        ],
+        "area": "Dirección de Investigación y Desarrollo Tecnológico"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Resultados de la convocatoria SNII",
+        "texto": "Se presentaron los resultados de 36 solicitudes de personal de investigación, técnico, tecnólogo, Programa IIxM y posdoctorados. El 63% obtuvo un resultado favorable de promoción, con seis ascensos de nivel y tres bajas del sistema.",
+        "tags": [
+          "SNII",
+          "promoción",
+          "investigadores",
+          "evaluación"
+        ],
+        "area": "Dirección de Investigación y Desarrollo Tecnológico"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Aprobación de solicitudes de estancias posdoctorales",
+        "texto": "ACUERDO CCA/2026-08-21/1: Se aprueban por unanimidad las 42 solicitudes de estancias posdoctorales presentadas ante el CCA.",
+        "tags": [
+          "posdoctorado",
+          "estancias",
+          "acuerdo",
+          "CCA"
+        ],
+        "area": "Dirección de Investigación y Desarrollo Tecnológico"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Evaluaciones del personal IIxM",
+        "texto": "Se informó que las evaluaciones del personal del Programa Investigadoras e Investigadores por México (IIxM) se realizarán en octubre. Se convocará al Grupo Evaluador y al personal para organizar el proceso bajo los criterios vigentes.",
+        "tags": [
+          "IIxM",
+          "evaluación",
+          "personal académico"
+        ],
+        "area": "Dirección de Investigación y Desarrollo Tecnológico"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Extensión de permiso sin goce de sueldo",
+        "texto": "ACUERDO CCA/2026-08-21/2: Se aprueba por unanimidad la extensión por un segundo año del permiso sin goce de sueldo de la Dra. Itziar Aretxaga Méndez.",
+        "tags": [
+          "Itziar Aretxaga Méndez",
+          "permiso",
+          "Astrofísica",
+          "acuerdo"
+        ],
+        "area": "Coordinación de Astrofísica"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Consultas sobre revistas Secihti",
+        "texto": "Se informó sobre la consulta realizada a la Secihti respecto al reconocimiento de revistas para efectos de evaluación en el SNII, la cual se encuentra pendiente de confirmación.",
+        "tags": [
+          "Secihti",
+          "revistas",
+          "SNII",
+          "evaluación"
+        ],
+        "area": "Dirección de Investigación y Desarrollo Tecnológico"
+      },
+      {
+        "tipo": "acuerdo",
+        "titulo": "Autorización de clases externas",
+        "texto": "ACUERDO CCA/2026-08-21/3, 4 y 5: Se aprueban las solicitudes de los doctores Eduardo Tepichín Rodríguez, Ángel Sinue Cruz Félix y Carlos Gerardo Treviño Palacios para impartir clases externas hasta por ocho horas semanales.",
+        "tags": [
+          "Eduardo Tepichín Rodríguez",
+          "Ángel Sinue Cruz Félix",
+          "Carlos Gerardo Treviño Palacios",
+          "docencia",
+          "acuerdo"
+        ],
+        "area": "Coordinación de Óptica"
+      },
+      {
+        "tipo": "tema",
+        "titulo": "Uso de insumos del plotter",
+        "texto": "Se reportó un uso excesivo de insumos del plotter de la Coordinación de Óptica debido a impresiones reiteradas. Se propuso promover el uso responsable y evaluar la reparación o adquisición de nuevos equipos.",
+        "tags": [
+          "plotter",
+          "insumos",
+          "recursos",
+          "Coordinación de Óptica"
+        ],
+        "area": "Coordinación de Óptica"
+      },
+      {
+        "tipo": "seguimiento",
+        "titulo": "Seguimiento de asuntos del CPA",
+        "texto": "Se dio seguimiento a temas pendientes como criterios de laboratorios, protocolos de acoso, guías administrativas y presupuestos. Se destacó la publicación del protocolo contra el acoso y la preocupación por la falta de respuesta de la DAF en otros temas.",
+        "tags": [
+          "CPA",
+          "DAF",
+          "acoso",
+          "seguimiento",
+          "presupuesto"
+        ],
+        "area": "Dirección de Administración y Finanzas"
+      }
+    ],
+    "archivo": "CPA-2026-08-21.pdf"
   }
 ]
